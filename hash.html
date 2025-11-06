@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Hash | ZenLeaf Traders</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="zenleaf-style.css">
+</head>
+<body class="thcflower">
+
+  <!-- HEADER -->
+  <header>
+    <div class="nav-container">
+      <div class="logo">
+        <a href="index.html"><img src="images/zenleaf-logo.png" alt="ZenLeaf Logo"></a>
+        <h1>ZenLeaf Traders</h1>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+      </div>
+
+      <nav>
+        <ul id="main-menu">
+          <li><a href="index.html">Home</a></li>
+          <li class="dropdown">
+            <a href="#" onclick="toggleDropdown(event)">Products ▾</a>
+            <ul class="dropdown-menu">
+              <li><a href="thcflower.html">THC Flower</a></li>
+              <li><a href="thcedibles.html">THC Edibles</a></li>
+              <li><a href="thcvapes.html">THC Vapes</a></li>
+              <li><a href="hash.html" class="active">Hash</a></li>
+            </ul>
+          </li>
+          <li><a href="shipping.html">Shipping</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="testimonials.html">Testimonials</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li>
+            <a class="nav-cart" href="cart.html">
+              <span class="cart-icon">🛒</span>
+              <span id="cart-count" class="cart-count">0</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- PAGE TITLE -->
+  <h1 class="page-title">🧱 Moroccan Hash Collection – ZenLeaf Traders</h1>
+
+  <!-- PRODUCT GRID -->
+  <main class="container">
+    <div class="products-grid">
+
+      
+     <!-- Moroccan Caramello Hash -->
+<div class="product-card">
+  <img src="images/moroccan-caramello.jpeg" alt="Moroccan Caramello Hash">
+  <div class="product-content">
+    <span class="strain-type indica">Indica</span>
+    <h3>Moroccan Caramello Hash</h3>
+    <p class="effects">Sweet caramel aroma, smooth smoke, deeply relaxing body buzz.</p>
+    <p class="pricing">7g: $140 | 14g: $260 | 28g: $480</p>
+    <a href="#" class="order-btn" data-name="Moroccan Caramello Hash">Order Now</a>
+  </div>
+</div>
+
+<!-- Moroccan Zero Zero Hash -->
+<div class="product-card">
+  <img src="images/moroccan-00.jpeg" alt="Moroccan Zero Zero Hash">
+  <div class="product-content">
+    <span class="strain-type hybrid">Hybrid</span>
+    <h3>Moroccan Zero Zero (00)</h3>
+    <p class="effects">Classic golden texture, smooth earthy flavor, balanced high.</p>
+    <p class="pricing">7g: $130 | 14g: $250 | 28g: $460</p>
+    <a href="#" class="order-btn" data-name="Moroccan Zero Zero (00)">Order Now</a>
+  </div>
+</div>
+
+<!-- Moroccan Gold Seal Hash -->
+<div class="product-card">
+  <img src="images/moroccan-goldseal.jpeg" alt="Moroccan Gold Seal Hash">
+  <div class="product-content">
+    <span class="strain-type sativa">Sativa</span>
+    <h3>Moroccan Gold Seal Hash</h3>
+    <p class="effects">Premium golden-brown hash with uplifting euphoric effects.</p>
+    <p class="pricing">7g: $150 | 14g: $270 | 28g: $490</p>
+    <a href="#" class="order-btn" data-name="Moroccan Gold Seal Hash">Order Now</a>
+  </div>
+</div>
+
+<!-- Moroccan Ketama Gold Hash -->
+<div class="product-card">
+  <img src="images/moroccan-ketama-gold.jpeg" alt="Moroccan Ketama Gold Hash">
+  <div class="product-content">
+    <span class="strain-type indica">Indica</span>
+    <h3>Moroccan Ketama Gold</h3>
+    <p class="effects">Rich aroma from Ketama valley, heavy and relaxing body effect.</p>
+    <p class="pricing">7g: $140 | 14g: $260 | 28g: $480</p>
+    <a href="#" class="order-btn" data-name="Moroccan Ketama Gold">Order Now</a>
+  </div>
+</div>
+
+<!-- Moroccan Blonde Hash -->
+<div class="product-card">
+  <img src="images/moroccan-blonde.jpeg" alt="Moroccan Blonde Hash">
+  <div class="product-content">
+    <span class="strain-type hybrid">Hybrid</span>
+    <h3>Moroccan Blonde Hash</h3>
+    <p class="effects">Classic creamy smoke, relaxing but clear-headed experience.</p>
+    <p class="pricing">7g: $130 | 14g: $250 | 28g: $460</p>
+    <a href="#" class="order-btn" data-name="Moroccan Blonde Hash">Order Now</a>
+  </div>
+</div>
+
+<!-- Moroccan Slate Hash -->
+<div class="product-card">
+  <img src="images/moroccan-slate.jpeg" alt="Moroccan Slate Hash">
+  <div class="product-content">
+    <span class="strain-type indica">Indica</span>
+    <h3>Moroccan Slate Hash</h3>
+    <p class="effects">Dark, potent, and long-lasting — a true connoisseur’s choice.</p>
+    <p class="pricing">7g: $150 | 14g: $270 | 28g: $490</p>
+    <a href="#" class="order-btn" data-name="Moroccan Slate Hash">Order Now</a>
+  </div>
+</div>
+
+  </main>
+
+   <!-- MENU SCRIPT -->
+  <script>
+    function toggleMenu() {
+      document.getElementById("main-menu").classList.toggle("active");
+    }
+    function toggleDropdown(event) {
+      event.preventDefault();
+      event.stopPropagation();
+      const dropdown = event.target.closest('.dropdown');
+      dropdown.classList.toggle("open");
+    }
+    document.addEventListener("click", function (e) {
+      document.querySelectorAll('.dropdown').forEach(drop => {
+        if (!drop.contains(e.target)) {
+          drop.classList.remove("open");
+        }
+      });
+    });
+  </script>
+
+  <!-- 🛒 ORDER MODAL FOR HASH -->
+  <div id="orderModalHash" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <span class="close" title="Close">&times;</span>
+      <h2 id="modalProductNameHash">Order</h2>
+      <p>Select hash size / price:</p>
+
+      <form id="orderFormHash">
+        <select id="sizeSelectHash" aria-label="Hash size">
+          <option value="150">7g - $150</option>
+          <option value="260">14g - $260</option>
+          <option value="470">28g - $470</option>
+        </select>
+
+        <div style="margin-top:12px;">
+          <button type="button" id="addToCartBtnHash" class="btn add">Add to Cart</button>
+          <button type="button" id="goToCartBtnHash" class="btn cart">View Cart</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+ 
+  <script src="assets/js/cart.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const modal = document.querySelector('#orderModalHash');
+  const productNameEl = modal.querySelector('#modalProductNameHash');
+  const sizeSelect = modal.querySelector('#sizeSelectHash');
+  const addToCartBtn = modal.querySelector('#addToCartBtnHash');
+  const goToCartBtn = modal.querySelector('#goToCartBtnHash');
+  const closeBtn = modal.querySelector('.close');
+
+  // --- helper: extract price ---
+  function parsePriceFromOption(opt) {
+    if (!opt) return 0;
+    const v = Number(opt.value);
+    if (Number.isFinite(v) && v > 0) return v;
+    const txt = (opt.text || '').replace(/,/g, '');
+    const matches = txt.match(/\d+(\.\d+)?/g);
+    return matches ? parseFloat(matches[matches.length - 1]) : 0;
+  }
+
+  // --- open modal ---
+  document.querySelectorAll('.product-card .order-btn').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.preventDefault();
+      const card = btn.closest('.product-card');
+      const productName = card ? (card.querySelector('h3')?.innerText.trim()) : 'Product';
+      productNameEl.textContent = 'Order — ' + productName;
+      modal.dataset.currentProduct = productName;
+      sizeSelect.selectedIndex = 0;
+      modal.classList.add('show');
+      modal.setAttribute('aria-hidden', 'false');
+    });
+  });
+
+  // --- close modal ---
+  function closeModal() {
+    modal.classList.remove('show');
+    modal.setAttribute('aria-hidden', 'true');
+    delete modal.dataset.currentProduct;
+  }
+  closeBtn.addEventListener('click', closeModal);
+  window.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+
+  // --- add to cart ---
+  addToCartBtn.addEventListener('click', () => {
+    const currentProduct = modal.dataset.currentProduct;
+    if (!currentProduct) return alert('No product selected.');
+
+    const opt = sizeSelect.options[sizeSelect.selectedIndex];
+    const price = parsePriceFromOption(opt);
+    const sizeLabel = (opt.text || '').split('-')[0].trim();
+
+    const item = { name: currentProduct, size: sizeLabel, price: Number(price) || 0, quantity: 1 };
+
+    if (window.ZLCart && typeof window.ZLCart.add === 'function') {
+      window.ZLCart.add(item);
+    } else {
+      const raw = JSON.parse(localStorage.getItem('cart') || '[]');
+      raw.push(item);
+      localStorage.setItem('cart', JSON.stringify(raw));
+      const count = raw.reduce((s, it) => s + (Number(it.quantity) || 0), 0);
+      document.querySelectorAll('#cart-count, #cartCount, .cart-count, .cart-badge')
+        .forEach(el => el.textContent = count);
+      document.dispatchEvent(new CustomEvent('cart:updated'));
+    }
+
+    alert(`${currentProduct} — ${sizeLabel} added to cart ($${price})`);
+    if (window.ZLCart?.renderBadge) window.ZLCart.renderBadge();
+
+    closeModal();
+  });
+
+  // --- add then go to cart ---
+  goToCartBtn.addEventListener('click', () => {
+    addToCartBtn.click();
+    setTimeout(() => { window.location.href = 'cart.html'; }, 200);
+  });
+});
+</script>
+
+<script src="cart.js"></script>
+
+
+
+   
+
+
+
+  <footer>
+    © 2018–2025 ZenLeaf Traders – Trusted 420-Friendly Product Shop
+  </footer>
+
+
+
+<div id="live-notifications" class="live-notifications"></div>
+
+
+
+<script>
+  const names = [
+    "Sophie", "Oliver", "Liam", "Emma", "Lucas", "Chloe", "Noah", "Isabella",
+    "Ethan", "Mia", "Charlotte", "Aiden", "Ella", "Leo", "Grace", "Jack", "Luca", "Sienna", "Mason", "Amelia"
+  ];
+
+  const countries = [
+    "United Kingdom", "France", "Germany", "Spain", "Italy", "Netherlands",
+    "Switzerland", "Ireland", "Austria", "Belgium", "Denmark", "Sweden",
+    "Norway", "Finland", "Canada", "United States"
+  ];
+
+  const products = [
+    "Stiiizy Gelato Pod", "OG Kush (1lb)", "Pineapple Express", "Blue Dream",
+    "Girl Scout Cookie", "White Widow", "Lemon Haze", "Sour OG", "Purple Kush",
+    "Grape Ape", "Jack Herer", "Bubble Moon Rock"
+  ];
+
+  const actions = [
+    "just ordered", "left a review for", "grabbed a deal on",
+    "purchased", "added to cart", "checked out with"
+  ];
+
+  const emojis = ["🌿", "💨", "🔥", "✨", "🚚", "🌸"];
+
+  const notificationBox = document.getElementById("live-notifications");
+
+  // ✅ Add your sound file here
+  const popSound = new Audio("assets/sounds/pop.mp3");
+
+  function randomItem(arr) {
+    return arr[Math.floor(Math.random() * arr.length)];
+  }
+
+  function generateNotification() {
+    const name = randomItem(names);
+    const country = randomItem(countries);
+    const action = randomItem(actions);
+    const product = randomItem(products);
+    const emoji = randomItem(emojis);
+
+    return `${emoji} ${name} from ${country} ${action} ${product}!`;
+  }
+
+  function showNotification() {
+    notificationBox.textContent = generateNotification();
+    notificationBox.classList.add("show");
+
+    // ✅ Play pop sound each time a new notification appears
+    popSound.currentTime = 0; // restart sound if it’s already playing
+    popSound.play().catch(err => console.log("Sound play blocked:", err));
+
+    setTimeout(() => {
+      notificationBox.classList.remove("show");
+    }, 4000);
+  }
+
+  // Start rotation
+  setInterval(showNotification, 6000);
+  showNotification();
+</script>
+
+</body>
+</html>

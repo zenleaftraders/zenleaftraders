@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>THC Edibles | ZenLeaf Traders</title>
+
+  <!-- same font & css as site -->
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="zenleaf-style.css">
+</head>
+<body class="thcflower">
+
+  <!-- HEADER (matches your other pages: logo, nav, cart) -->
+  <header>
+    <div class="nav-container">
+      <div class="logo">
+        <a href="index.html"><img src="images/zenleaf-logo.png" alt="ZenLeaf Logo"></a>
+        <h1>ZenLeaf Traders</h1>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+      </div>
+
+      <nav>
+        <ul id="main-menu">
+          <li><a href="index.html">Home</a></li>
+          <li class="dropdown">
+            <a href="#" onclick="toggleDropdown(event)">Products ▾</a>
+            <ul class="dropdown-menu">
+              <li><a href="thcflower.html">THC Flower</a></li>
+              <li><a href="thcedibles.html">THC Edibles</a></li>
+              <li><a href="hash.html">Hash</a></li>
+              <li><a href="thcvapes.html">THC Vapes</a></li>
+            </ul>
+          </li>
+          <li><a href="shipping.html">Shipping</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="testimonials.html">Testimonials</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li>
+            <a class="nav-cart" href="cart.html">
+              <span class="cart-icon">🛒</span>
+              <span id="cart-count" class="cart-count">0</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <h1 class="page-title">🍬 THC Edibles – ZenLeaf Traders</h1>
+  <main class="container">
+
+    <!-- Products grid (same structure as THC Flower) -->
+    <div class="products-grid">
+
+      <!-- Wyld Gummies – Raspberry -->
+      <div class="product-card">
+        <img src="images/wyld-raspberry.jpeg" alt="Wyld Raspberry Gummies">
+        <div class="product-content">
+          <span class="strain-type sativa">Sativa</span>
+          <h3>Wyld Gummies – Raspberry</h3>
+          <p class="effects">Bright, uplifting, and creative — great for daytime.</p>
+          <p class="pricing">100mg: $15 | 250mg: $35 | 500mg: $60 | 1000mg: $110</p>
+          <a href="#" class="order-btn">Order Now</a>
+        </div>
+      </div>
+
+      <!-- Wyld Gummies – Pomegranate -->
+      <div class="product-card">
+        <img src="images/wyld-pomegranate.jpeg" alt="Wyld Pomegranate Gummies">
+        <div class="product-content">
+          <span class="strain-type hybrid">Hybrid</span>
+          <h3>Wyld Gummies – Pomegranate</h3>
+          <p class="effects">Balanced, mood-lifting — suitable day or night.</p>
+          <p class="pricing">100mg: $15 | 250mg: $35 | 500mg: $60 | 1000mg: $110</p>
+          <a href="#" class="order-btn">Order Now</a>
+        </div>
+      </div>
+
+      <!-- Wyld Gummies – Peach -->
+      <div class="product-card">
+        <img src="images/wyld-peach.jpeg" alt="Wyld Peach Gummies">
+        <div class="product-content">
+          <span class="strain-type hybrid">Hybrid</span>
+          <h3>Wyld Gummies – Peach</h3>
+          <p class="effects">Calming and mellow — gentle body ease and clarity.</p>
+          <p class="pricing">100mg: $15 | 250mg: $35 | 500mg: $60 | 1000mg: $110</p>
+          <a href="#" class="order-btn">Order Now</a>
+        </div>
+      </div>
+
+      <!-- Wyld Gummies – Huckleberry -->
+      <div class="product-card">
+        <img src="images/wyld-huckleberry.jpeg" alt="Wyld Huckleberry Gummies">
+        <div class="product-content">
+          <span class="strain-type hybrid">Hybrid</span>
+          <h3>Wyld Gummies – Huckleberry</h3>
+          <p class="effects">Balanced and fruity — good for focus and relaxation.</p>
+          <p class="pricing">100mg: $15 | 250mg: $35 | 500mg: $60 | 1000mg: $110</p>
+          <a href="#" class="order-btn">Order Now</a>
+        </div>
+      </div>
+
+      <!-- Wyld Gummies – Marionberry -->
+      <div class="product-card">
+        <img src="images/wyld-marionberry.jpeg" alt="Wyld Marionberry Gummies">
+        <div class="product-content">
+          <span class="strain-type indica">Indica</span>
+          <h3>Wyld Gummies – Marionberry</h3>
+          <p class="effects">Calming body high — perfect for evenings and sleep.</p>
+          <p class="pricing">100mg: $15 | 250mg: $35 | 500mg: $60 | 1000mg: $110</p>
+          <a href="#" class="order-btn">Order Now</a>
+        </div>
+      </div>
+
+      <!-- 🍫 Kiva Chocolate Bars -->
+
+<!-- Milk Chocolate -->
+<div class="product-card">
+  <img src="images/kiva-milk.jpeg" alt="Kiva Milk Chocolate">
+  <div class="product-content">
+    <span class="strain-type hybrid">Hybrid</span>
+    <h3>Kiva Chocolate – Milk</h3>
+    <p class="effects">Smooth, balanced, relaxing.</p>
+    <p class="pricing">100mg: $15 | 250mg: $35 | 500mg: $60 | 1000mg: $110</p>
+    <a href="#" class="order-btn">Order Now</a>
+  </div>
+</div>
+
+<!-- Dark Chocolate -->
+<div class="product-card">
+  <img src="images/kiva-dark.jpeg" alt="Kiva Dark Chocolate">
+  <div class="product-content">
+    <span class="strain-type indica">Indica</span>
+    <h3>Kiva Chocolate – Dark</h3>
+    <p class="effects">Deeply calming, great for sleep and stress relief.</p>
+    <p class="pricing">100mg: $15 | 250mg: $35 | 500mg: $60 | 1000mg: $110</p>
+    <a href="#" class="order-btn">Order Now</a>
+  </div>
+</div>
+
+<!-- Mint Chocolate -->
+<div class="product-card">
+  <img src="images/kiva-mint.jpeg" alt="Kiva Mint Chocolate">
+  <div class="product-content">
+    <span class="strain-type sativa">Sativa</span>
+    <h3>Kiva Chocolate – Mint</h3>
+    <p class="effects">Refreshing, uplifting, daytime boost.</p>
+    <p class="pricing">100mg: $15 | 250mg: $35 | 500mg: $60 | 1000mg: $110</p>
+    <a href="#" class="order-btn">Order Now</a>
+  </div>
+</div>
+
+<!-- Churro Chocolate -->
+<div class="product-card">
+  <img src="images/kiva-churro.jpeg" alt="Kiva Churro Chocolate">
+  <div class="product-content">
+    <span class="strain-type hybrid">Hybrid</span>
+    <h3>Kiva Chocolate – Churro</h3>
+    <p class="effects">Sweet, cozy, relaxing body high.</p>
+    <p class="pricing">100mg: $15 | 250mg: $35 | 500mg: $60 | 1000mg: $110</p>
+    <a href="#" class="order-btn">Order Now</a>
+  </div>
+</div>
+
+<!-- Toffee Crunch Chocolate -->
+<div class="product-card">
+  <img src="images/kiva-toffee.jpeg" alt="Kiva Toffee Crunch Chocolate">
+  <div class="product-content">
+    <span class="strain-type hybrid">Hybrid</span>
+    <h3>Kiva Chocolate – Toffee Crunch</h3>
+    <p class="effects">Sweet, relaxing, happy mood boost.</p>
+    <p class="pricing">100mg: $15 | 250mg: $35 | 500mg: $60 | 1000mg: $110</p>
+    <a href="#" class="order-btn">Order Now</a>
+  </div>
+</div>
+
+<!-- 🍬 Camino Gummies -->
+<div class="product-card">
+  <img src="images/camino-watermelon.jpeg" alt="Camino Gummies – Watermelon">
+  <div class="product-content">
+    <span class="strain-type hybrid">Hybrid</span>
+    <h3>Camino Gummies – Watermelon Lemonade</h3>
+    <p class="effects">Uplifting, social, summer vibes.</p>
+    <p class="pricing">100mg: $15 | 250mg: $35 | 500mg: $60 | 1000mg: $110</p>
+    <a href="#" class="order-btn">Order Now</a>
+  </div>
+</div>
+
+<div class="product-card">
+  <img src="images/camino-wildberry.jpeg" alt="Camino Gummies – Wild Berry">
+  <div class="product-content">
+    <span class="strain-type indica">Indica</span>
+    <h3>Camino Gummies – Wild Berry</h3>
+    <p class="effects">Chill, relaxing, couch-friendly.</p>
+    <p class="pricing">100mg: $15 | 250mg: $35 | 500mg: $60 | 1000mg: $110</p>
+    <a href="#" class="order-btn">Order Now</a>
+  </div>
+</div>
+
+<div class="product-card">
+  <img src="images/camino-midnightblueberry.jpeg" alt="Camino Gummies – Midnight Blueberry">
+  <div class="product-content">
+    <span class="strain-type indica">Indica</span>
+    <h3>Camino Gummies – Midnight Blueberry</h3>
+    <p class="effects">Sleepy, calming, perfect for bedtime.</p>
+    <p class="pricing">100mg: $15 | 250mg: $35 | 500mg: $60 | 1000mg: $110</p>
+    <a href="#" class="order-btn">Order Now</a>
+  </div>
+</div>
+
+<div class="product-card">
+  <img src="images/camino-pineapple.jpeg" alt="Camino Gummies – Pineapple Habanero">
+  <div class="product-content">
+    <span class="strain-type sativa">Sativa</span>
+    <h3>Camino Gummies – Pineapple Habanero</h3>
+    <p class="effects">Energizing, tropical, adventurous.</p>
+    <p class="pricing">100mg: $15 | 250mg: $35 | 500mg: $60 | 1000mg: $110</p>
+    <a href="#" class="order-btn">Order Now</a>
+  </div>
+</div>
+
+<div class="product-card">
+  <img src="images/camino-sparklingpear.jpeg" alt="Camino Gummies – Sparkling Pear">
+  <div class="product-content">
+    <span class="strain-type hybrid">Hybrid (CBD blend)</span>
+    <h3>Camino Gummies – Sparkling Pear</h3>
+    <p class="effects">Balanced, mellow, gentle relief.</p>
+    <p class="pricing">100mg: $15 | 250mg: $35 | 500mg: $60 | 1000mg: $110</p>
+    <a href="#" class="order-btn">Order Now</a>
+  </div>
+</div>
+
+
+
+    </div> <!-- end products-grid -->
+
+  </main>
+
+  <footer>
+    © 2018–2025 ZenLeaf Traders – Trusted 420-Friendly Product Shop
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("main-menu").classList.toggle("active");
+    }
+
+    function toggleDropdown(event) {
+      event.preventDefault();
+      event.stopPropagation();
+      const dropdown = event.target.closest('.dropdown');
+      dropdown.classList.toggle("open");
+    }
+
+    // Close dropdown if click outside
+    document.addEventListener("click", function (e) {
+      document.querySelectorAll('.dropdown').forEach(drop => {
+        if (!drop.contains(e.target)) {
+          drop.classList.remove("open");
+        }
+      });
+    });
+  </script>
+
+ <!-- 🛒 Order Now Modal for Edibles -->
+<div id="orderModalEdibles" class="modal" aria-hidden="true">
+  <div class="modal-content">
+    <span class="close" title="close">&times;</span>
+    <h2 id="modalProductNameEdibles">Order</h2>
+    <p>Select potency / price:</p>
+
+    <form id="orderFormEdibles">
+      <select id="sizeSelectEdibles" aria-label="Potency">
+        <option value="15">100mg - $15</option>
+        <option value="35">250mg - $35</option>
+        <option value="60">500mg - $60</option>
+        <option value="110">1000mg - $110</option>
+      </select>
+
+      <div style="margin-top:12px;">
+        <button type="button" id="addToCartBtnEdibles" class="btn add">Add to Cart</button>
+        <button type="button" id="goToCartBtnEdibles" class="btn cart">View Cart</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const modal = document.querySelector('#orderModalEdibles');
+  const productNameEl = modal.querySelector('#modalProductNameEdibles');
+  const sizeSelect = modal.querySelector('#sizeSelectEdibles');
+  const addToCartBtn = modal.querySelector('#addToCartBtnEdibles');
+  const goToCartBtn = modal.querySelector('#goToCartBtnEdibles');
+  const closeBtn = modal.querySelector('.close');
+
+  // --- helper: extract price ---
+  function parsePriceFromOption(opt) {
+    if (!opt) return 0;
+    const v = Number(opt.value);
+    if (Number.isFinite(v) && v > 0) return v;
+    const txt = (opt.text || '').replace(/,/g, '');
+    const matches = txt.match(/\d+(\.\d+)?/g);
+    return matches ? parseFloat(matches[matches.length - 1]) : 0;
+  }
+
+  // --- open modal ---
+  document.querySelectorAll('.product-card .order-btn').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.preventDefault();
+      const card = btn.closest('.product-card');
+      const productName = card ? (card.querySelector('h3')?.innerText.trim()) : 'Product';
+      productNameEl.textContent = 'Order — ' + productName;
+      modal.dataset.currentProduct = productName;
+      sizeSelect.selectedIndex = 0;
+      modal.classList.add('show');
+      modal.setAttribute('aria-hidden', 'false');
+    });
+  });
+
+  // --- close modal ---
+  function closeModal() {
+    modal.classList.remove('show');
+    modal.setAttribute('aria-hidden', 'true');
+    delete modal.dataset.currentProduct;
+  }
+  closeBtn.addEventListener('click', closeModal);
+  window.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+
+  // --- add to cart ---
+  addToCartBtn.addEventListener('click', () => {
+    const currentProduct = modal.dataset.currentProduct;
+    if (!currentProduct) return alert('No product selected.');
+
+    const opt = sizeSelect.options[sizeSelect.selectedIndex];
+    const price = parsePriceFromOption(opt);
+    const sizeLabel = (opt.text || '').split('-')[0].trim();
+
+    const item = { name: currentProduct, size: sizeLabel, price: Number(price) || 0, quantity: 1 };
+
+    if (window.ZLCart && typeof window.ZLCart.add === 'function') {
+      window.ZLCart.add(item);
+    } else {
+      const raw = JSON.parse(localStorage.getItem('cart') || '[]');
+      raw.push(item);
+      localStorage.setItem('cart', JSON.stringify(raw));
+      const count = raw.reduce((s, it) => s + (Number(it.quantity) || 0), 0);
+      document.querySelectorAll('#cart-count, #cartCount, .cart-count, .cart-badge')
+        .forEach(el => el.textContent = count);
+      document.dispatchEvent(new CustomEvent('cart:updated'));
+    }
+
+    alert(`${currentProduct} — ${sizeLabel} added to cart ($${price})`);
+    if (window.ZLCart?.renderBadge) window.ZLCart.renderBadge();
+
+    closeModal();
+  });
+
+  // --- add then go to cart ---
+  goToCartBtn.addEventListener('click', () => {
+    addToCartBtn.click();
+    setTimeout(() => { window.location.href = 'cart.html'; }, 200);
+  });
+});
+</script>
+
+<script src="cart.js"></script>
+
+
+<div id="live-notifications" class="live-notifications"></div>
+
+
+
+<script>
+  const names = [
+    "Sophie", "Oliver", "Liam", "Emma", "Lucas", "Chloe", "Noah", "Isabella",
+    "Ethan", "Mia", "Charlotte", "Aiden", "Ella", "Leo", "Grace", "Jack", "Luca", "Sienna", "Mason", "Amelia"
+  ];
+
+  const countries = [
+    "United Kingdom", "France", "Germany", "Spain", "Italy", "Netherlands",
+    "Switzerland", "Ireland", "Austria", "Belgium", "Denmark", "Sweden",
+    "Norway", "Finland", "Canada", "United States"
+  ];
+
+  const products = [
+    "Stiiizy Gelato Pod", "OG Kush (1lb)", "Pineapple Express", "Blue Dream",
+    "Girl Scout Cookie", "White Widow", "Lemon Haze", "Sour OG", "Purple Kush",
+    "Grape Ape", "Jack Herer", "Bubble Moon Rock"
+  ];
+
+  const actions = [
+    "just ordered", "left a review for", "grabbed a deal on",
+    "purchased", "added to cart", "checked out with"
+  ];
+
+  const emojis = ["🌿", "💨", "🔥", "✨", "🚚", "🌸"];
+
+  const notificationBox = document.getElementById("live-notifications");
+
+  // ✅ Add your sound file here
+  const popSound = new Audio("assets/sounds/pop.mp3");
+
+  function randomItem(arr) {
+    return arr[Math.floor(Math.random() * arr.length)];
+  }
+
+  function generateNotification() {
+    const name = randomItem(names);
+    const country = randomItem(countries);
+    const action = randomItem(actions);
+    const product = randomItem(products);
+    const emoji = randomItem(emojis);
+
+    return `${emoji} ${name} from ${country} ${action} ${product}!`;
+  }
+
+  function showNotification() {
+    notificationBox.textContent = generateNotification();
+    notificationBox.classList.add("show");
+
+    // ✅ Play pop sound each time a new notification appears
+    popSound.currentTime = 0; // restart sound if it’s already playing
+    popSound.play().catch(err => console.log("Sound play blocked:", err));
+
+    setTimeout(() => {
+      notificationBox.classList.remove("show");
+    }, 4000);
+  }
+
+  // Start rotation
+  setInterval(showNotification, 6000);
+  showNotification();
+</script>
+
+
+
+</body>
+</html>

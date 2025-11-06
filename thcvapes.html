@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>THC Vapes | ZenLeaf Traders</title>
+
+  <!-- same font & site CSS -->
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="zenleaf-style.css">
+</head>
+<body class="thcflower">
+
+  <!-- HEADER (same as other pages) -->
+  <header>
+    <div class="nav-container">
+      <div class="logo">
+        <a href="index.html"><img src="images/zenleaf-logo.png" alt="ZenLeaf Logo"></a>
+        <h1>ZenLeaf Traders</h1>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+      </div>
+
+      <nav>
+        <ul id="main-menu">
+          <li><a href="index.html">Home</a></li>
+          <li class="dropdown">
+            <a href="#" onclick="toggleDropdown(event)">Products ▾</a>
+            <ul class="dropdown-menu">
+              <li><a href="thcflower.html">THC Flower</a></li>
+              <li><a href="thcedibles.html">THC Edibles</a></li>
+              <li><a href="thcvapes.html">THC Vapes</a></li>
+              <li><a href="hash.html">Hash</a></li>
+            </ul>
+          </li>
+          <li><a href="shipping.html">Shipping</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="testimonials.html">Testimonials</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li>
+            <a class="nav-cart" href="cart.html">
+              <span class="cart-icon">🛒</span>
+              <span id="cart-count" class="cart-count">0</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <h1 class="page-title">💨 THC Vapes – ZenLeaf Traders</h1>
+
+  <main class="container">
+    <div class="products-grid">
+
+      <!-- Stiiizy — Mimosa -->
+      <div class="product-card">
+        <img src="images/stiiizy-mimosa.jpeg" alt="Stiiizy Mimosa Pod">
+        <div class="product-content">
+          <span class="strain-type sativa">Sativa</span>
+          <h3>Stiiizy — Mimosa</h3>
+          <p class="effects">Energetic, euphoric, bright citrus uplift.</p>
+          <p class="pricing">0.5g: $35 | 1g: $60 | 2×0.5g: $65</p>
+          <a href="#" class="order-btn">Order Now</a>
+        </div>
+      </div>
+
+      <!-- Stiiizy — Gelato -->
+      <div class="product-card">
+        <img src="images/stiiizy-gelato.jpeg" alt="Stiiizy Gelato Pod">
+        <div class="product-content">
+          <span class="strain-type hybrid">Hybrid</span>
+          <h3>Stiiizy — Gelato</h3>
+          <p class="effects">Balanced, euphoric with relaxed body feel.</p>
+          <p class="pricing">0.5g: $35 | 1g: $60 | 2×0.5g: $65</p>
+          <a href="#" class="order-btn">Order Now</a>
+        </div>
+      </div>
+
+      <!-- Stiiizy — Strawnana -->
+      <div class="product-card">
+        <img src="images/stiiizy-strawnana.jpeg" alt="Stiiizy Strawnana Pod">
+        <div class="product-content">
+          <span class="strain-type hybrid">Hybrid</span>
+          <h3>Stiiizy — Strawnana</h3>
+          <p class="effects">Sweet, uplifting, creative buzz.</p>
+          <p class="pricing">0.5g: $35 | 1g: $60 | 2×0.5g: $65</p>
+          <a href="#" class="order-btn">Order Now</a>
+        </div>
+      </div>
+
+      <!-- Stiiizy — Banana OG -->
+      <div class="product-card">
+        <img src="images/stiiizy-banana-og.jpeg" alt="Stiiizy Banana OG Pod">
+        <div class="product-content">
+          <span class="strain-type indica">Indica</span>
+          <h3>Stiiizy — Banana OG</h3>
+          <p class="effects">Heavy, relaxing, perfect for evening wind-down.</p>
+          <p class="pricing">0.5g: $35 | 1g: $60 | 2×0.5g: $65</p>
+          <a href="#" class="order-btn">Order Now</a>
+        </div>
+      </div>
+
+      <!-- Stiiizy — Zkittlez -->
+      <div class="product-card">
+        <img src="images/stiiizy-zkittlez.jpeg" alt="Stiiizy Zkittlez Pod">
+        <div class="product-content">
+          <span class="strain-type indica">Indica</span>
+          <h3>Stiiizy — Zkittlez</h3>
+          <p class="effects">Relaxed, dessert-like, calming mood lift.</p>
+          <p class="pricing">0.5g: $35 | 1g: $60 | 2×0.5g: $65</p>
+          <a href="#" class="order-btn">Order Now</a>
+        </div>
+      </div>
+
+   <!-- 🔥 Raw Garden Cartridges (fixed pricing to match Stiiizy modal) -->
+
+<!-- Raw Garden — GMO Cookies -->
+<div class="product-card">
+  <img src="images/rawgarden-gmo.jpeg" alt="Raw Garden GMO Cookies Cartridge">
+  <div class="product-content">
+    <span class="strain-type indica">Indica</span>
+    <h3>Raw Garden — GMO Cookies</h3>
+    <p class="effects">Relaxing, sedative, deep calm.</p>
+    <p class="pricing">0.5g: $35 | 1g: $60 | 2×0.5g: $65</p>
+    <a href="#" class="order-btn">Order Now</a>
+  </div>
+</div>
+
+<!-- Raw Garden — Strawberry Cough -->
+<div class="product-card">
+  <img src="images/rawgarden-strawberry.jpeg" alt="Raw Garden Strawberry Cough Cartridge">
+  <div class="product-content">
+    <span class="strain-type sativa">Sativa</span>
+    <h3>Raw Garden — Strawberry Cough</h3>
+    <p class="effects">Uplifting, creative, euphoric.</p>
+    <p class="pricing">0.5g: $35 | 1g: $60 | 2×0.5g: $65</p>
+    <a href="#" class="order-btn">Order Now</a>
+  </div>
+</div>
+
+<!-- Raw Garden — Lemon Fuel -->
+<div class="product-card">
+  <img src="images/rawgarden-lemon.jpeg" alt="Raw Garden Lemon Fuel Cartridge">
+  <div class="product-content">
+    <span class="strain-type hybrid">Hybrid</span>
+    <h3>Raw Garden — Lemon Fuel</h3>
+    <p class="effects">Energetic, focused, uplifting.</p>
+    <p class="pricing">0.5g: $35 | 1g: $60 | 2×0.5g: $65</p>
+    <a href="#" class="order-btn">Order Now</a>
+  </div>
+</div>
+
+<!-- Raw Garden — Chem Haze -->
+<div class="product-card">
+  <img src="images/rawgarden-chem.jpeg" alt="Raw Garden Chem Haze Cartridge">
+  <div class="product-content">
+    <span class="strain-type hybrid">Hybrid</span>
+    <h3>Raw Garden — Chem Haze</h3>
+    <p class="effects">Balanced, creative, smooth.</p>
+    <p class="pricing">0.5g: $35 | 1g: $60 | 2×0.5g: $65</p>
+    <a href="#" class="order-btn">Order Now</a>
+  </div>
+</div>
+
+<!-- Raw Garden — Wedding Cake -->
+<div class="product-card">
+  <img src="images/rawgarden-wedding.jpeg" alt="Raw Garden Wedding Cake Cartridge">
+  <div class="product-content">
+    <span class="strain-type hybrid">Hybrid</span>
+    <h3>Raw Garden — Wedding Cake</h3>
+    <p class="effects">Euphoric, calming, sweet.</p>
+    <p class="pricing">0.5g: $35 | 1g: $60 | 2×0.5g: $65</p>
+    <a href="#" class="order-btn">Order Now</a>
+  </div>
+</div>
+
+
+
+  </div>
+</section>
+
+
+    </div> <!-- end products-grid -->
+  </main>
+
+  <!-- 🛒 Order Now Modal for Vapes -->
+  <div id="orderModalVapes" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <span class="close" title="close">&times;</span>
+      <h2 id="modalProductNameVapes">Order</h2>
+      <p>Select cartridge size / price:</p>
+
+      <form id="orderFormVapes">
+        <select id="sizeSelectVapes" aria-label="Cartridge size">
+          <option value="35">0.5g - $35</option>
+          <option value="60">1g - $60</option>
+          <option value="65">2×0.5g - $65</option>
+        </select>
+
+        <div style="margin-top:12px;">
+          <button type="button" id="addToCartBtnVapes" class="btn add">Add to Cart</button>
+          <button type="button" id="goToCartBtnVapes" class="btn cart">View Cart</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal JS (same robust pattern as flower + edibles) -->
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.querySelector('#orderModalVapes');
+    const productNameEl = modal ? modal.querySelector('#modalProductNameVapes') : null;
+    const sizeSelect = modal ? modal.querySelector('#sizeSelectVapes') : null;
+    const addToCartBtn = modal ? modal.querySelector('#addToCartBtnVapes') : null;
+    const goToCartBtn = modal ? modal.querySelector('#goToCartBtnVapes') : null;
+    const closeBtn = modal ? modal.querySelector('.close') : null;
+
+    if (!modal || !productNameEl || !sizeSelect || !addToCartBtn || !goToCartBtn || !closeBtn) {
+      console.warn('Order modal (Vapes): missing expected elements. Script not initialized.');
+      return;
+    }
+
+    function parsePriceFromOption(opt) {
+      if (!opt) return 0;
+      const v = Number(opt.value);
+      if (Number.isFinite(v) && v > 0) return v;
+      const txt = (opt.text || '').replace(/,/g, '');
+      const matches = txt.match(/\d+(\.\d+)?/g);
+      if (matches && matches.length) return parseFloat(matches[matches.length - 1]);
+      return 0;
+    }
+
+    // open modal
+    document.querySelectorAll('.product-card .order-btn').forEach(btn => {
+      btn.addEventListener('click', e => {
+        e.preventDefault();
+        const card = btn.closest('.product-card');
+        const productName = card ? (card.querySelector('h3')?.innerText.trim()) : 'Product';
+        productNameEl.textContent = 'Order — ' + productName;
+        modal.dataset.currentProduct = productName;
+        sizeSelect.selectedIndex = 0;
+        modal.classList.add('show');
+        modal.setAttribute('aria-hidden', 'false');
+      });
+    });
+
+    function closeModal() {
+      modal.classList.remove('show');
+      modal.setAttribute('aria-hidden', 'true');
+      delete modal.dataset.currentProduct;
+    }
+    closeBtn.addEventListener('click', closeModal);
+    window.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+
+    // add to cart
+    addToCartBtn.addEventListener('click', () => {
+      const currentProduct = modal.dataset.currentProduct || null;
+      if (!currentProduct) return alert('No product selected.');
+
+      const opt = sizeSelect.options[sizeSelect.selectedIndex];
+      const price = parsePriceFromOption(opt);
+      const sizeLabel = (opt.text || '').split('-')[0].trim();
+
+      const item = { name: currentProduct, size: sizeLabel, price: Number(price) || 0, quantity: 1 };
+
+      if (window.ZLCart && typeof window.ZLCart.add === 'function') {
+        window.ZLCart.add(item);
+      } else {
+        try {
+          const raw = JSON.parse(localStorage.getItem('cart') || '[]');
+          raw.push(item);
+          localStorage.setItem('cart', JSON.stringify(raw));
+          const count = raw.reduce((s, it) => s + (Number(it.quantity) || 0), 0);
+          document.querySelectorAll('#cart-count, #cartCount, .cart-count, .cart-badge')
+            .forEach(el => el.textContent = count);
+          document.dispatchEvent(new CustomEvent('cart:updated'));
+        } catch (err) {
+          console.error('Vapes save cart error:', err);
+        }
+      }
+
+      alert(`${currentProduct} — ${sizeLabel} added to cart ($${price})`);
+      if (window.ZLCart?.renderBadge) window.ZLCart.renderBadge();
+
+      closeModal();
+    });
+
+    // add then go to cart
+    goToCartBtn.addEventListener('click', () => {
+      addToCartBtn.click();
+      setTimeout(() => { window.location.href = 'cart.html'; }, 200);
+    });
+  });
+  </script>
+
+  <!-- shared scripts -->
+  <script>
+    function toggleMenu() {
+      document.getElementById("main-menu").classList.toggle("active");
+    }
+    function toggleDropdown(event) {
+      event.preventDefault();
+      event.stopPropagation();
+      const dropdown = event.target.closest('.dropdown');
+      dropdown.classList.toggle("open");
+    }
+    document.addEventListener("click", function (e) {
+      document.querySelectorAll('.dropdown').forEach(drop => {
+        if (!drop.contains(e.target)) drop.classList.remove("open");
+      });
+    });
+  </script>
+
+  <script src="assets/js/cart.js"></script>
+
+  <footer>
+    © 2018–2025 ZenLeaf Traders – Trusted 420-Friendly Product Shop
+  </footer>
+
+
+
+<div id="live-notifications" class="live-notifications"></div>
+
+
+
+<script>
+  const names = [
+    "Sophie", "Oliver", "Liam", "Emma", "Lucas", "Chloe", "Noah", "Isabella",
+    "Ethan", "Mia", "Charlotte", "Aiden", "Ella", "Leo", "Grace", "Jack", "Luca", "Sienna", "Mason", "Amelia"
+  ];
+
+  const countries = [
+    "United Kingdom", "France", "Germany", "Spain", "Italy", "Netherlands",
+    "Switzerland", "Ireland", "Austria", "Belgium", "Denmark", "Sweden",
+    "Norway", "Finland", "Canada", "United States"
+  ];
+
+  const products = [
+    "Stiiizy Gelato Pod", "OG Kush (1lb)", "Pineapple Express", "Blue Dream",
+    "Girl Scout Cookie", "White Widow", "Lemon Haze", "Sour OG", "Purple Kush",
+    "Grape Ape", "Jack Herer", "Bubble Moon Rock"
+  ];
+
+  const actions = [
+    "just ordered", "left a review for", "grabbed a deal on",
+    "purchased", "added to cart", "checked out with"
+  ];
+
+  const emojis = ["🌿", "💨", "🔥", "✨", "🚚", "🌸"];
+
+  const notificationBox = document.getElementById("live-notifications");
+
+  // ✅ Add your sound file here
+  const popSound = new Audio("assets/sounds/pop.mp3");
+
+  function randomItem(arr) {
+    return arr[Math.floor(Math.random() * arr.length)];
+  }
+
+  function generateNotification() {
+    const name = randomItem(names);
+    const country = randomItem(countries);
+    const action = randomItem(actions);
+    const product = randomItem(products);
+    const emoji = randomItem(emojis);
+
+    return `${emoji} ${name} from ${country} ${action} ${product}!`;
+  }
+
+  function showNotification() {
+    notificationBox.textContent = generateNotification();
+    notificationBox.classList.add("show");
+
+    // ✅ Play pop sound each time a new notification appears
+    popSound.currentTime = 0; // restart sound if it’s already playing
+    popSound.play().catch(err => console.log("Sound play blocked:", err));
+
+    setTimeout(() => {
+      notificationBox.classList.remove("show");
+    }, 4000);
+  }
+
+  // Start rotation
+  setInterval(showNotification, 6000);
+  showNotification();
+</script>
+
+
+</body>
+</html>

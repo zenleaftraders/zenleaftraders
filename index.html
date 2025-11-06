@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZenLeaf Traders | CBD, Hash & THC Products Across Europe</title>
+
+  <!-- SEO Meta -->
+  <meta name="description" content="Shop affordable and premium CBD, hash, and exotic THC products from ZenLeaf Traders. We ship across the UK, Germany, Netherlands and more.">
+  <meta name="keywords" content="CBD Europe, Buy Hash UK, THC Germany, ZenLeaf, weed online Europe, cannabis flowers, affordable CBD, OG Kush, stoner products, 420 shop">
+  <meta name="author" content="ZenLeaf Traders">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="ZenLeaf Traders | CBD & THC Delivered in Europe">
+  <meta property="og:description" content="Trusted 420 products at low prices. Premium flowers, hash, edibles, and more.">
+  <meta property="og:image" content="https://zenleaftraders.com/images/zenleaf-logo.png">
+  <meta property="og:url" content="https://zenleaftraders.com">
+  <meta property="og:type" content="website">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="zenleaf-style.css">
+</head>
+<body class="homepage">
+
+  <!-- Header -->
+  <header>
+    <div class="nav-container">
+      <div class="logo">
+        <img src="images/zenleaf-logo.png" alt="ZenLeaf Logo">
+        <h1>ZenLeaf Traders</h1>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+      </div>
+
+      
+      <nav>
+        <ul id="main-menu">
+          <li><a href="index.html">Home</a></li>
+          <li class="dropdown">
+            <a href="#" onclick="toggleDropdown(event)">Products ▾</a>
+            <ul class="dropdown-menu">
+              <li><a href="thcflower.html">THC Flower</a></li>
+              <li><a href="thcedibles.html">THC Edibles</a></li>
+              <li><a href="hash.html">Hash</a></li>
+              <li><a href="thcvapes.html">THC Vapes</a></li>
+            </ul>
+          </li>
+          <li><a href="shipping.html">Shipping</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="testimonials.html">Testimonials</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li>
+            <a class="nav-cart" href="cart.html">
+              <span class="cart-icon">🛒</span>
+              <span id="cart-count" class="cart-count">0</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-overlay">
+      <div class="hero-content">
+        <h2>High Vibes. Low Prices. Europe-Wide Shipping.</h2>
+        <p>Shop premium CBD, hash, and exotic strains trusted by stoners across the UK, USA, Australia, Germany, Poland and Netherlands.</p>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section class="product-section">
+    <h3>Explore Our Products</h3>
+    <div class="products-grid">
+      <a href="thcflower.html" class="product-card">
+        <img src="images/cbdflower.jpg" alt="THC Flower">
+        <h4>THC Flower</h4>
+        <p>Organic indoor-grown buds. Rich in flavor and smooth in smoke.</p>
+      </a>
+      <a href="products.html" class="product-card">
+        <img src="images/hash.jpg" alt="Moroccan Hash">
+        <h4>Moroccan Hash</h4>
+        <p>Top-shelf brown hash – soft, potent, and perfect for joints.</p>
+      </a>
+      <a href="thcvapes.html" class="product-card">
+        <img src="images/vape.jpg" alt="THC Vape Carts">
+        <h4>THC Vape Carts</h4>
+        <p>Full-spectrum vapes with premium distillate. Strong and discreet.</p>
+      </a>
+      <a href="thcedibles.html" class="product-card">
+        <img src="images/edibles.jpg" alt="THC Edibles">
+        <h4>THC Edibles</h4>
+        <p>Delicious THC-infused gummies & cookies. Long-lasting effects.</p>
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    © 2018–2025 ZenLeaf Traders – Trusted 420-Friendly Product Shop
+  </footer>
+<!-- Scripts -->
+<script>
+  function toggleMenu() {
+    document.getElementById("main-menu").classList.toggle("active");
+  }
+
+  function toggleDropdown(event) {
+    event.preventDefault();
+    event.stopPropagation();
+    const dropdown = event.target.closest('.dropdown');
+    dropdown.classList.toggle("open");
+  }
+
+  // Close dropdown if click outside
+  document.addEventListener("click", function (e) {
+    document.querySelectorAll('.dropdown').forEach(drop => {
+      if (!drop.contains(e.target)) {
+        drop.classList.remove("open");
+      }
+    });
+  });
+</script>
+
+<!-- Shared cart logic -->
+<script src="assets/js/cart.js"></script>
+
+
+
+<div id="live-notifications" class="live-notifications"></div>
+
+
+
+<script>
+  const names = [
+    "Sophie", "Oliver", "Liam", "Emma", "Lucas", "Chloe", "Noah", "Isabella",
+    "Ethan", "Mia", "Charlotte", "Aiden", "Ella", "Leo", "Grace", "Jack", "Luca", "Sienna", "Mason", "Amelia"
+  ];
+
+  const countries = [
+    "United Kingdom", "France", "Germany", "Spain", "Italy", "Netherlands",
+    "Switzerland", "Ireland", "Austria", "Belgium", "Denmark", "Sweden",
+    "Norway", "Finland", "Canada", "United States"
+  ];
+
+  const products = [
+    "Stiiizy Gelato Pod", "OG Kush (1lb)", "Pineapple Express", "Blue Dream",
+    "Girl Scout Cookie", "White Widow", "Lemon Haze", "Sour OG", "Purple Kush",
+    "Grape Ape", "Jack Herer", "Bubble Moon Rock"
+  ];
+
+  const actions = [
+    "just ordered", "left a review for", "grabbed a deal on",
+    "purchased", "added to cart", "checked out with"
+  ];
+
+  const emojis = ["🌿", "💨", "🔥", "✨", "🚚", "🌸"];
+
+  const notificationBox = document.getElementById("live-notifications");
+
+  // ✅ Add your sound file here
+  const popSound = new Audio("assets/sounds/pop.mp3");
+
+  function randomItem(arr) {
+    return arr[Math.floor(Math.random() * arr.length)];
+  }
+
+  function generateNotification() {
+    const name = randomItem(names);
+    const country = randomItem(countries);
+    const action = randomItem(actions);
+    const product = randomItem(products);
+    const emoji = randomItem(emojis);
+
+    return `${emoji} ${name} from ${country} ${action} ${product}!`;
+  }
+
+  function showNotification() {
+    notificationBox.textContent = generateNotification();
+    notificationBox.classList.add("show");
+
+    // ✅ Play pop sound each time a new notification appears
+    popSound.currentTime = 0; // restart sound if it’s already playing
+    popSound.play().catch(err => console.log("Sound play blocked:", err));
+
+    setTimeout(() => {
+      notificationBox.classList.remove("show");
+    }, 4000);
+  }
+
+  // Start rotation
+  setInterval(showNotification, 6000);
+  showNotification();
+</script>
+
+
+</body>
+</html>

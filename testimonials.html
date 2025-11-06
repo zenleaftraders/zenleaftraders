@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Testimonials | ZenLeaf Traders</title>
+  <link rel="stylesheet" href="zenleaf-style.css">
+  <script src="assets/js/cart.js" defer></script>
+</head>
+
+<body class="testimonials-page">
+
+  <!-- HEADER -->
+  <header>
+    <div class="nav-container">
+      <div class="logo">
+        <img src="images/zenleaf-logo.png" alt="ZenLeaf Logo">
+        <h1>ZenLeaf Traders</h1>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+      </div>
+
+      <nav>
+        <ul id="main-menu">
+          <li><a href="index.html">Home</a></li>
+          <li class="dropdown">
+            <a href="#" onclick="toggleDropdown(event)">Products ▾</a>
+            <ul class="dropdown-menu">
+              <li><a href="thcflower.html">THC Flower</a></li>
+              <li><a href="thcedibles.html">THC Edibles</a></li>
+              <li><a href="hash.html">Hash</a></li>
+              <li><a href="thcvapes.html">THC Vapes</a></li>
+            </ul>
+          </li>
+          <li><a href="shipping.html">Shipping</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="testimonial.html"  class="active">Testimonials</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li>
+            <a class="nav-cart" href="cart.html">
+              <span class="cart-icon">🛒</span>
+              <span id="cart-count" class="cart-count">0</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-overlay">
+      <div class="hero-content">
+        <h2>High Vibes. Low Prices. Europe-Wide Shipping.</h2>
+        <p>Shop premium CBD, hash, and exotic strains trusted by stoners across the UK, USA, Australia, Germany, Poland and Netherlands.</p>
+        
+      </div>
+    </div>
+  </section>
+
+  <main class="testimonial-container">
+    <h1>🌿 What Our Customers Say</h1>
+    <p>Real stories from customers across the world who trust ZenLeaf Traders for quality and discretion.</p>
+
+    <section class="testimonials-grid">
+      <div class="testimonial-card">
+        <p>Excellent quality buds and super discreet delivery. Will order again!</p>
+        <h4> Oliver M. 🇬🇧 <span>(Burnley, UK)</span></h4>
+        <small>November 2025</small>
+      </div>
+      <div class="testimonial-card">
+        <p>Livraison rapide et emballage très soigné. Service client impeccable.</p>
+        <h4> Élodie R. 🇫🇷 <span>(Paris, France)</span></h4>
+        <small>October 2025</small>
+      </div>
+      <div class="testimonial-card">
+        <p>Top quality and super smooth checkout. Danke ZenLeaf!</p>
+        <h4> Lukas S. 🇩🇪 <span>(Berlin, Germany)</span></h4>
+        <small>November 2025</small>
+      </div>
+      <div class="testimonial-card">
+        <p>Perfecto! Muy rápido y discretamente enviado.</p>
+        <h4> Carla P. 🇪🇸 <span>(Madrid, Spain)</span></h4>
+        <small>October 2025</small>
+      </div>
+      <div class="testimonial-card">
+        <p>Prodotti eccellenti e imballaggio anonimo. Cinque stelle.</p>
+        <h4> Matteo G. 🇮🇹 <span>(Rome, Italy)</span></h4>
+        <small>November 2025</small>
+      </div>
+      <div class="testimonial-card">
+        <p>Fast shipping, smooth service, and top quality flowers.</p>
+        <h4> Fleur D. 🇳🇱 <span>(Amsterdam, Netherlands)</span></h4>
+        <small>October 2025</small>
+      </div>
+    </section>
+
+    <section class="submit-testimonial">
+      <h2>💬 Share Your Experience</h2>
+      <form id="testimonialForm">
+        <input type="text" placeholder="Your Name" required>
+        <select required>
+       <option value="">Select Country</option>
+  <option>Argentina</option>
+  <option>Australia</option>
+  <option>Austria</option>
+  <option>Belgium</option>
+  <option>Brazil</option>
+  <option>Canada</option>
+  <option>Chile</option>
+  <option>China</option>
+  <option>Czech Republic</option>
+  <option>Denmark</option>
+  <option>Estonia</option>
+  <option>Finland</option>
+  <option>France</option>
+  <option>Germany</option>
+  <option>Greece</option>
+  <option>Hungary</option>
+  <option>Iceland</option>
+  <option>India</option>
+  <option>Indonesia</option>
+  <option>Ireland</option>
+  <option>Israel</option>
+  <option>Italy</option>
+  <option>Japan</option>
+  <option>Latvia</option>
+  <option>Lithuania</option>
+  <option>Luxembourg</option>
+  <option>Malaysia</option>
+  <option>Mexico</option>
+  <option>Netherlands</option>
+  <option>New Zealand</option>
+  <option>Norway</option>
+  <option>Pakistan</option>
+  <option>Philippines</option>
+  <option>Poland</option>
+  <option>Portugal</option>
+  <option>Qatar</option>
+  <option>Russia</option>
+  <option>Saudi Arabia</option>
+  <option>Singapore</option>
+  <option>South Korea</option>
+  <option>Spain</option>
+  <option>Sweden</option>
+  <option>Switzerland</option>
+  <option>Taiwan</option>
+  <option>Thailand</option>
+  <option>Turkey</option>
+  <option>Ukraine</option>
+  <option>United Arab Emirates</option>
+  <option>United Kingdom</option>
+  <option>United States</option>
+  <option>Vietnam</option>
+  <option>Other</option>
+</select>
+        <textarea placeholder="Write your testimonial..." required></textarea>
+        <button type="submit">Submit</button>
+      </form>
+      <p id="formMessage" class="hidden">✅ Thank you! Your feedback has been submitted for review.</p>
+    </section>
+  </main>
+
+   <footer>
+    <p>&copy; 2018–2025 ZenLeaf Traders. All Rights Reserved.</p>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script>
+    function toggleMenu() {
+      document.getElementById("main-menu").classList.toggle("active");
+    }
+
+    function toggleDropdown(event) {
+      event.preventDefault();
+      event.stopPropagation();
+      const dropdown = event.target.closest('.dropdown');
+      dropdown.classList.toggle("open");
+    }
+
+    document.addEventListener("click", function(e) {
+      document.querySelectorAll('.dropdown').forEach(drop => {
+        if (!drop.contains(e.target)) {
+          drop.classList.remove("open");
+        }
+      });
+    });
+  </script>
+
+   <script>
+    // Fake form submission
+    const form = document.getElementById('testimonialForm');
+    const msg = document.getElementById('formMessage');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      form.reset();
+      msg.classList.remove('hidden');
+      setTimeout(() => msg.classList.add('hidden'), 4000);
+    });
+  </script>
+
+<div id="live-notifications" class="live-notifications"></div>
+
+<script>
+  const names = [
+    "Sophie", "Oliver", "Liam", "Emma", "Lucas", "Chloe", "Noah", "Isabella",
+    "Ethan", "Mia", "Charlotte", "Aiden", "Ella", "Leo", "Grace", "Jack", "Luca", "Sienna", "Mason", "Amelia"
+  ];
+
+  const countries = [
+    "United Kingdom", "France", "Germany", "Spain", "Italy", "Netherlands",
+    "Switzerland", "Ireland", "Austria", "Belgium", "Denmark", "Sweden",
+    "Norway", "Finland", "Canada", "United States"
+  ];
+
+  const products = [
+    "Stiiizy Gelato Pod", "OG Kush (1lb)", "Pineapple Express", "Blue Dream",
+    "Girl Scout Cookie", "White Widow", "Lemon Haze", "Sour OG", "Purple Kush",
+    "Grape Ape", "Jack Herer", "Bubble Moon Rock"
+  ];
+
+  const actions = [
+    "just ordered", "left a review for", "grabbed a deal on",
+    "purchased", "added to cart", "checked out with"
+  ];
+
+  const emojis = ["🌿", "💨", "🔥", "✨", "🚚", "🌸"];
+
+  const notificationBox = document.getElementById("live-notifications");
+
+  // ✅ Add your sound file here
+  const popSound = new Audio("assets/sounds/pop.mp3");
+
+  function randomItem(arr) {
+    return arr[Math.floor(Math.random() * arr.length)];
+  }
+
+  function generateNotification() {
+    const name = randomItem(names);
+    const country = randomItem(countries);
+    const action = randomItem(actions);
+    const product = randomItem(products);
+    const emoji = randomItem(emojis);
+
+    return `${emoji} ${name} from ${country} ${action} ${product}!`;
+  }
+
+  function showNotification() {
+    notificationBox.textContent = generateNotification();
+    notificationBox.classList.add("show");
+
+    // ✅ Play pop sound each time a new notification appears
+    popSound.currentTime = 0; // restart sound if it’s already playing
+    popSound.play().catch(err => console.log("Sound play blocked:", err));
+
+    setTimeout(() => {
+      notificationBox.classList.remove("show");
+    }, 4000);
+  }
+
+  // Start rotation
+  setInterval(showNotification, 6000);
+  showNotification();
+</script>
+
+
+
+</body>
+</html>

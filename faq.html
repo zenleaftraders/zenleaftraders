@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>FAQ | ZenLeaf Traders</title>
+  <link rel="stylesheet" href="zenleaf-style.css">
+</head>
+<body class="faq-page">
+
+  <!-- HEADER -->
+  <header>
+    <div class="nav-container">
+      <div class="logo">
+        <img src="images/zenleaf-logo.png" alt="ZenLeaf Logo">
+        <h1>ZenLeaf Traders</h1>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+      </div>
+
+      <nav>
+        <ul id="main-menu">
+          <li><a href="index.html">Home</a></li>
+          <li class="dropdown">
+            <a href="#" onclick="toggleDropdown(event)">Products ▾</a>
+            <ul class="dropdown-menu">
+              <li><a href="thcflower.html">THC Flower</a></li>
+              <li><a href="thcedibles.html">THC Edibles</a></li>
+              <li><a href="hash.html">Hash</a></li>
+              <li><a href="thcvapes.html">THC Vapes</a></li>
+            </ul>
+          </li>
+          <li><a href="shipping.html">Shipping</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="testimonials.html">Testimonials</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="faq.html"  class="active">FAQ</a></li>
+          <li>
+            <a class="nav-cart" href="cart.html">
+              <span class="cart-icon">🛒</span>
+              <span id="cart-count" class="cart-count">0</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-overlay">
+      <div class="hero-content">
+        <h2>High Vibes. Low Prices. Europe-Wide Shipping.</h2>
+        <p>Shop premium CBD, hash, and exotic strains trusted by stoners across the UK, USA, Australia, Germany, Poland and Netherlands.</p>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGE TITLE -->
+  <h1 class="page-title">Frequently Asked Questions</h1>
+
+  <!-- MAIN CONTENT -->
+  <main class="container faq-container">
+
+    <section class="shipping-container">
+      <h2>Ordering & Payments</h2>
+
+      <div class="faq-item">
+        <h3>💳 What payment methods do you accept?</h3>
+        <p>We accept Bitcoin, Ethereum, CashApp,Paypal, Apple Pay and bank transfers. All payments are secure and verified before shipment.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>🛍️ How do I place an order?</h3>
+        <p>Simply browse our product pages, click “Order Now,” choose your quantity, and complete checkout. A confirmation email will be sent immediately.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>🔒 Is my information kept private?</h3>
+        <p>Yes. We use end-to-end encryption and never share or sell your information. Packaging is also completely discreet.</p>
+      </div>
+    </section>
+
+    <section class="shipping-container">
+      <h2>Shipping & Delivery</h2>
+
+      <div class="faq-item">
+        <h3>🚚 How long does shipping take?</h3>
+        <p>Within the UK or EU: 3–5 business days. International orders: 5–7 business day.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>📦 How do I track my order?</h3>
+        <p>Once shipped, you’ll receive a tracking number to follow your order in real time. You can also contact support for updates.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>🌍 Do you ship worldwide?</h3>
+        <p>Yes. We deliver discreetly to most countries including the UK, US, Europe, Canada, and the US. Restricted areas may vary.</p>
+      </div>
+    </section>
+
+    <section class="shipping-container">
+      <h2>Products & Quality</h2>
+
+      <div class="faq-item">
+        <h3>🌿 Are your products lab-tested?</h3>
+        <p>Absolutely. Every product is sourced from licensed growers and tested for purity, THC/CBD content, and contaminants.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>🧊 How do you package flower and edibles?</h3>
+        <p>All items are vacuum-sealed, odor-proof, and wrapped with neutral packaging to ensure privacy and freshness.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>🧾 Can I get bulk or wholesale deals?</h3>
+        <p>Yes! Contact our sales team through the <a href="contact.html" style="color:#8effb6;">contact form</a> for custom wholesale pricing.</p>
+      </div>
+    </section>
+
+    <section class="shipping-container">
+      <h2>Support & Contact</h2>
+
+      <div class="faq-item">
+        <h3>💬 How can I reach support?</h3>
+        <p>We’re available 24/7 through our <a href="contact.html" style="color:#8effb6;">contact page</a> or live chat. Responses are usually within 15–30 minutes.</p>
+      </div>
+
+      <div class="faq-item">
+        <h3>❓ Can I edit or cancel my order?</h3>
+        <p>If your order hasn’t shipped yet, contact us immediately and we’ll assist you. Shipped orders can’t be modified.</p>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2018–2025 ZenLeaf Traders – Trusted 420-Friendly Product Shop
+  </footer>
+
+  <!-- MENU SCRIPT -->
+  <script>
+    function toggleMenu() {
+      document.getElementById("main-menu").classList.toggle("active");
+    }
+    function toggleDropdown(event) {
+      event.preventDefault();
+      event.stopPropagation();
+      const dropdown = event.target.closest('.dropdown');
+      dropdown.classList.toggle("open");
+    }
+    document.addEventListener("click", function (e) {
+      document.querySelectorAll('.dropdown').forEach(drop => {
+        if (!drop.contains(e.target)) {
+          drop.classList.remove("open");
+        }
+      });
+    });
+  </script>
+
+  <div id="live-notifications" class="live-notifications"></div>
+
+
+
+<script>
+  const names = [
+    "Sophie", "Oliver", "Liam", "Emma", "Lucas", "Chloe", "Noah", "Isabella",
+    "Ethan", "Mia", "Charlotte", "Aiden", "Ella", "Leo", "Grace", "Jack", "Luca", "Sienna", "Mason", "Amelia"
+  ];
+
+  const countries = [
+    "United Kingdom", "France", "Germany", "Spain", "Italy", "Netherlands",
+    "Switzerland", "Ireland", "Austria", "Belgium", "Denmark", "Sweden",
+    "Norway", "Finland", "Canada", "United States"
+  ];
+
+  const products = [
+    "Stiiizy Gelato Pod", "OG Kush (1lb)", "Pineapple Express", "Blue Dream",
+    "Girl Scout Cookie", "White Widow", "Lemon Haze", "Sour OG", "Purple Kush",
+    "Grape Ape", "Jack Herer", "Bubble Moon Rock"
+  ];
+
+  const actions = [
+    "just ordered", "left a review for", "grabbed a deal on",
+    "purchased", "added to cart", "checked out with"
+  ];
+
+  const emojis = ["🌿", "💨", "🔥", "✨", "🚚", "🌸"];
+
+  const notificationBox = document.getElementById("live-notifications");
+
+  // ✅ Add your sound file here
+  const popSound = new Audio("assets/sounds/pop.mp3");
+
+  function randomItem(arr) {
+    return arr[Math.floor(Math.random() * arr.length)];
+  }
+
+  function generateNotification() {
+    const name = randomItem(names);
+    const country = randomItem(countries);
+    const action = randomItem(actions);
+    const product = randomItem(products);
+    const emoji = randomItem(emojis);
+
+    return `${emoji} ${name} from ${country} ${action} ${product}!`;
+  }
+
+  function showNotification() {
+    notificationBox.textContent = generateNotification();
+    notificationBox.classList.add("show");
+
+    // ✅ Play pop sound each time a new notification appears
+    popSound.currentTime = 0; // restart sound if it’s already playing
+    popSound.play().catch(err => console.log("Sound play blocked:", err));
+
+    setTimeout(() => {
+      notificationBox.classList.remove("show");
+    }, 4000);
+  }
+
+  // Start rotation
+  setInterval(showNotification, 6000);
+  showNotification();
+</script>
+
+  
+
+</body>
+</html>

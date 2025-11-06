@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Shipping | ZenLeaf Traders</title>
+  <link rel="stylesheet" href="zenleaf-style.css">
+  <script src="assets/js/cart.js" defer></script>
+</head>
+
+<body class="shipping-page">
+
+  <!-- HEADER -->
+  <header>
+    <div class="nav-container">
+      <div class="logo">
+        <img src="images/zenleaf-logo.png" alt="ZenLeaf Logo">
+        <h1>ZenLeaf Traders</h1>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+      </div>
+
+      <nav>
+        <ul id="main-menu">
+          <li><a href="index.html">Home</a></li>
+          <li class="dropdown">
+            <a href="#" onclick="toggleDropdown(event)">Products ▾</a>
+            <ul class="dropdown-menu">
+              <li><a href="thcflower.html">THC Flower</a></li>
+              <li><a href="thcedibles.html">THC Edibles</a></li>
+              <li><a href="hash.html">Hash</a></li>
+              <li><a href="thcvapes.html">THC Vapes</a></li>
+            </ul>
+          </li>
+          <li><a href="shipping.html" class="active">Shipping</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="testimonials.html">Testimonials</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li>
+            <a class="nav-cart" href="cart.html">
+              <span class="cart-icon">🛒</span>
+              <span id="cart-count" class="cart-count">0</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-overlay">
+      <div class="hero-content">
+        <h2>High Vibes. Low Prices. Europe-Wide Shipping.</h2>
+        <p>Shop premium CBD, hash, and exotic strains trusted by stoners across the UK, USA, Australia, Germany, Poland and Netherlands.</p>
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <main class="shipping-container">
+    <h1>🌿 Shipping Information</h1>
+    <p>
+      ZenLeaf Traders offers discreet, reliable, and fast global delivery.
+      We take privacy seriously and ensure your package arrives safely and on time.
+    </p>
+
+    <section class="shipping-details">
+      <h2>Shipping Times</h2>
+      <ul>
+        <li><strong>United Kingdom & Europe:</strong> 3–5 business days  fast, fully discreet, and tracked shipping through trusted couriers.</li>
+        <li><strong>United States:</strong> 24–48 hour express delivery available. Overnight shipping option available for all  customers.</li>
+        <li><strong>Canada:</strong> 2–4 business days  discreet packaging with tracking included.</li>
+        <li><strong>Worldwide:</strong> 5–10 business days depending on region. All parcels are vacuum-sealed and customs-cleared before dispatch.</li>
+      </ul>
+
+      <p>
+        Every order is handled with care and confidentiality. ZenLeaf partners only with
+        <strong>licensed logistics networks</strong> that understand the importance of
+        privacy, reliability, and timely delivery. No logos, no scent, no stress 
+        your order arrives safe and sealed.
+      </p>
+    </section>
+
+  <section class="policy-highlights">
+  <div class="policy-card">
+    <img src="images/shipping-discreet.jpg" alt="Discreet Packaging">
+    <h3>Discreet Packaging</h3>
+    <p>No scent, no logos, and vacuum-sealed for total privacy.</p>
+  </div>
+
+  <div class="policy-card">
+    <img src="images/shipping-fast.jpg" alt="Fast Delivery">
+    <h3>Fast Delivery</h3>
+    <p>Overnight options in the U.S. and express shipping worldwide.</p>
+  </div>
+
+  <div class="policy-card">
+    <img src="images/shipping-tracked.jpg" alt="Tracked Orders">
+    <h3>Tracked Orders</h3>
+    <p>Receive real-time updates from warehouse to your doorstep.</p>
+  </div>
+
+  <div class="policy-card">
+    <img src="images/support.jpg" alt="24/7 Support">
+    <h3>24/7 Support</h3>
+    <p>Need help? Our customer care team is available anytime.</p>
+  </div>
+</section>
+
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2018–2025 ZenLeaf Traders. All rights reserved.</p>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script>
+    function toggleMenu() {
+      document.getElementById("main-menu").classList.toggle("active");
+    }
+
+    function toggleDropdown(event) {
+      event.preventDefault();
+      event.stopPropagation();
+      const dropdown = event.target.closest('.dropdown');
+      dropdown.classList.toggle("open");
+    }
+
+    document.addEventListener("click", function(e) {
+      document.querySelectorAll('.dropdown').forEach(drop => {
+        if (!drop.contains(e.target)) {
+          drop.classList.remove("open");
+        }
+      });
+    });
+  </script>
+
+  
+<div id="live-notifications" class="live-notifications"></div>
+
+
+
+<script>
+  const names = [
+    "Sophie", "Oliver", "Liam", "Emma", "Lucas", "Chloe", "Noah", "Isabella",
+    "Ethan", "Mia", "Charlotte", "Aiden", "Ella", "Leo", "Grace", "Jack", "Luca", "Sienna", "Mason", "Amelia"
+  ];
+
+  const countries = [
+    "United Kingdom", "France", "Germany", "Spain", "Italy", "Netherlands",
+    "Switzerland", "Ireland", "Austria", "Belgium", "Denmark", "Sweden",
+    "Norway", "Finland", "Canada", "United States"
+  ];
+
+  const products = [
+    "Stiiizy Gelato Pod", "OG Kush (1lb)", "Pineapple Express", "Blue Dream",
+    "Girl Scout Cookie", "White Widow", "Lemon Haze", "Sour OG", "Purple Kush",
+    "Grape Ape", "Jack Herer", "Bubble Moon Rock"
+  ];
+
+  const actions = [
+    "just ordered", "left a review for", "grabbed a deal on",
+    "purchased", "added to cart", "checked out with"
+  ];
+
+  const emojis = ["🌿", "💨", "🔥", "✨", "🚚", "🌸"];
+
+  const notificationBox = document.getElementById("live-notifications");
+
+  // ✅ Add your sound file here
+  const popSound = new Audio("assets/sounds/pop.mp3");
+
+  function randomItem(arr) {
+    return arr[Math.floor(Math.random() * arr.length)];
+  }
+
+  function generateNotification() {
+    const name = randomItem(names);
+    const country = randomItem(countries);
+    const action = randomItem(actions);
+    const product = randomItem(products);
+    const emoji = randomItem(emojis);
+
+    return `${emoji} ${name} from ${country} ${action} ${product}!`;
+  }
+
+  function showNotification() {
+    notificationBox.textContent = generateNotification();
+    notificationBox.classList.add("show");
+
+    // ✅ Play pop sound each time a new notification appears
+    popSound.currentTime = 0; // restart sound if it’s already playing
+    popSound.play().catch(err => console.log("Sound play blocked:", err));
+
+    setTimeout(() => {
+      notificationBox.classList.remove("show");
+    }, 4000);
+  }
+
+  // Start rotation
+  setInterval(showNotification, 6000);
+  showNotification();
+</script>
+
+
+</body>
+</html>
