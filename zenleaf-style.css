@@ -1018,3 +1018,21 @@ footer {
   opacity: 1;
   transform: translateY(0);
 }
+
+.footer-contact {
+  text-align: center;
+  margin-top: 10px;
+  padding: 10px 0;
+}
+
+.footer-contact a {
+  color: #fff; /* or #00ff99 if you use green theme */
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 15px;
+  transition: color 0.3s ease;
+}
+
+.footer-contact a:hover {
+  color: #00ff99; /* matches your site accent color */
+}
