@@ -143,14 +143,7 @@ body.homepage .product-card {
   font-size: 0.95rem;
 }
 
-/* =============== Footer =============== */
-footer {
-  background-color: rgba(0, 0, 0, 0.85);
-  text-align: center;
-  padding: 15px;
-  font-size: 0.9rem;
-  color: #aaa;
-}
+
 
 /* =============== Responsive =============== */
 @media (max-width: 768px) {
@@ -786,17 +779,7 @@ body.thcflower .order-btn:hover { background: #218838; }
 }
 
 
-/* --- FOOTER FIX --- */
-footer {
-  text-align: center;
-  padding: 20px 0;
-  color: #bbb;
-  background: rgba(0, 0, 0, 0.6);
-  position: relative;
-  bottom: 0;
-  width: 100%;
-  margin-top: 40px;
-}
+
 
 
 .contact-form {
@@ -1019,23 +1002,7 @@ footer {
   transform: translateY(0);
 }
 
-.footer-contact {
-  text-align: center;
-  margin-top: 10px;
-  padding: 10px 0;
-}
 
-.footer-contact a {
-  color: #fff; /* or #00ff99 if you use green theme */
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 15px;
-  transition: color 0.3s ease;
-}
-
-.footer-contact a:hover {
-  color: #00ff99; /* matches your site accent color */
-}
 
 /* ----------------------------
    ZENLEAF BLOG PAGE (Glassy Readable Style)
@@ -1210,18 +1177,49 @@ footer {
   line-height: 1.8;
 }
 
+/* ==================== CLEAN FOOTER ==================== */
+footer {
+  background-color: rgba(0, 0, 0, 0.85);
+  color: #00ff99;
+  text-align: center;
+  padding: 20px 10px;
+  font-size: 0.9rem;
+  width: 100%;
+  position: relative; /* not fixed */
+  z-index: 1; /* keep it below overlays */
+  margin-top: 40px;
+}
 
-.footer-blog a {
+footer a {
   color: #00ff99;
   text-decoration: none;
   font-weight: 500;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
   transition: color 0.3s ease;
 }
 
-.footer-blog a:hover {
+footer a:hover {
   color: #fff;
 }
+
+/* Footer sections spacing */
+.footer-contact,
+.footer-blog {
+  margin-top: 10px;
+}
+
+.footer-contact svg,
+.footer-blog svg {
+  vertical-align: middle;
+  margin-right: 6px;
+  fill: #00ff99;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  footer {
+    font-size: 0.85rem;
+    padding: 18px 10px;
+  }
+}
+
+
