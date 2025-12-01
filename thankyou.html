@@ -47,6 +47,11 @@
     </div>
   </header>
 
+  <div style="background:#d11c1c; color:white; text-align:center; padding:10px 5px; font-size:17px; font-weight:bold;">
+  🎄 Holiday Deals All December – Fresh Drops & Special Offers! 🎁
+</div>
+
+
   <!-- MAIN CONTENT -->
   <main class="thankyou-container">
     <h1>Thank You for Your Order!</h1>
@@ -56,6 +61,7 @@
   </main>
 
   <!-- FOOTER -->
+   
   <footer>
   <div class="footer-contact">
     <a href="mailto:sales@zenleaftrader.com">
@@ -166,7 +172,24 @@
   showNotification();
 </script>
 
+<!-- ❄️ Realistic Snow Generator -->
+<script>
+  const snowCount = 60;  // Increase for thicker snow
+  for (let i = 0; i < snowCount; i++) {
+    let flake = document.createElement("div");
+    flake.className = "snowflake";
+
+    flake.style.left = Math.random() * 100 + "vw";
+    flake.style.animationDuration = 4 + Math.random() * 6 + "s";
+    flake.style.opacity = 0.5 + Math.random() * 0.5;
+    flake.style.width = flake.style.height = 2 + Math.random() * 6 + "px";
+
+    flake.style.animationDelay = Math.random() * 5 + "s";
+
+    document.body.appendChild(flake);
+  }
+</script>
+
 
 </body>
 </html>
-
