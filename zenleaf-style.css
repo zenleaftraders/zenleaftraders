@@ -1269,3 +1269,10 @@ footer a:hover {
 }
 
 
+.country-links {
+  max-width: 900px;
+  margin: 40px auto;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
