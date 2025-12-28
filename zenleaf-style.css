@@ -1290,3 +1290,11 @@ footer a:hover {
   background: #fff;
 }
 
+.thc-level {
+  font-size: 0.85em;
+  color: #6bd66b;
+  font-weight: 600;
+  margin-left: 6px;
+}
+
+
