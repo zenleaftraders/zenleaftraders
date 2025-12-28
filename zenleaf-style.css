@@ -1276,3 +1276,17 @@ footer a:hover {
   opacity: 0.9;
 }
 
+
+
+.language-switcher {
+  margin-left: 15px;
+  font-size: 13px;
+}
+
+.language-switcher select {
+  padding: 4px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  background: #fff;
+}
+
