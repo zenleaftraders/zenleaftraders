@@ -101,4 +101,41 @@
     <priority>0.8</priority>
   </url>
 
+  <!-- New Country Pages -->
+
+<url>
+  <loc>https://zenleaftraders.com/buy-cannabis-uk.html</loc>
+  <changefreq>weekly</changefreq>
+  <priority>0.8</priority>
+</url>
+
+
+  
+  <url>
+    <loc>https://zenleaftraders.com/comprar-cannabis-espana.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://zenleaftraders.com/comprare-cannabis-italia.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://zenleaftraders.com/cannabis-nederland.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://zenleaftraders.com/cannabis-belgie.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://zenleaftraders.com/cannabis-belgique.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+
 </urlset>
