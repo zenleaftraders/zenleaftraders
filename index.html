@@ -277,24 +277,23 @@ s0.parentNode.insertBefore(s1,s0);
 
 
  <script type="text/javascript">
-function initGoogleTranslate() {
+function googleTranslateElementInit() {
   new google.translate.TranslateElement({
     pageLanguage: 'en',
     includedLanguages: 'de,fr,pl,nl,it,es',
     layout: google.translate.TranslateElement.InlineLayout.SIMPLE
   }, 'google_translate_element');
 }
-
-// Delay translation init by 20 minutes (1800000 milliseconds)
-setTimeout(initGoogleTranslate, 1800000);
 </script>
 
-<script src="//translate.google.com/translate_a/element.js"></script>
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
 
 
 
 </body>
 </html>
+
 
 
 
