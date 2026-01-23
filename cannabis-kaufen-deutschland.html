@@ -120,9 +120,10 @@
 </header>
 
 <!-- Holiday Banner -->
-<div style="background:#d11c1c; color:white; text-align:center; padding:10px 5px; font-size:17px; font-weight:bold;">
-  🎄 Dezember-Angebote – Premium Cannabis & diskreter Versand 🎁
+<div style="background:#c026d3; color:white; text-align:center; padding:10px 7px; font-size:17px; font-weight:bold;">
+  ❤️ Valentine Drops – Frische Blüten, Hash & Vapes für den Februar 💨
 </div>
+
 
 <!-- Hero -->
 <section class="hero">
@@ -250,7 +251,7 @@
   <h2>Weitere Länder-Guides</h2>
   <ul>
     <li><a href="buy-cannabis-uk.html">Cannabis im Vereinigten Königreich kaufen</a></li>
-    <li><a href="acheter-cannabis-europe.html">Cannabis in Frankreich kaufen</a></li>
+    <li><a href="acheter-cannabis-france.html">Cannabis in Frankreich kaufen</a></li>
     <li><a href="cannabis-kopen-nederland.html">Cannabis in den Niederlanden</a></li>
     <li><a href="comprar-cannabis-espana.html">Cannabis in Spanien</a></li>
     <li><a href="kup-cannabis-polska.html">Cannabis in Polen</a></li>
@@ -390,21 +391,28 @@ s0.parentNode.insertBefore(s1,s0);
 <!--End of Tawk.to Script-->
 
 <!-- ❄️ Realistic Snow Generator -->
+<div class="hearts"></div>
+
 <script>
-  const snowCount = 60;  // Increase for thicker snow
-  for (let i = 0; i < snowCount; i++) {
-    let flake = document.createElement("div");
-    flake.className = "snowflake";
+for (let i = 0; i < 20; i++) {
+  const heart = document.createElement('div');
+  heart.className = 'heart';
+  heart.style.left = Math.random() * 100 + 'vw';
+  heart.style.animationDelay = Math.random() * 3 + 's';
+  heart.textContent = '❤';
+  document.querySelector('.hearts').appendChild(heart);
+}
+</script>
 
-    flake.style.left = Math.random() * 100 + "vw";
-    flake.style.animationDuration = 4 + Math.random() * 6 + "s";
-    flake.style.opacity = 0.5 + Math.random() * 0.5;
-    flake.style.width = flake.style.height = 2 + Math.random() * 6 + "px";
 
-    flake.style.animationDelay = Math.random() * 5 + "s";
-
-    document.body.appendChild(flake);
-  }
+  <script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'en',
+    includedLanguages: 'de,fr,pl,nl,it,es',
+    layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+  }, 'google_translate_element');
+}
 </script>
 
 </body>
