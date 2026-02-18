@@ -381,81 +381,118 @@ body.thcflower .order-btn {
 body.thcflower .order-btn:hover { background: #218838; }
 
 /* ===================
-   🛒 Modal Styles
+   🛒 Modal Styles (Polished & Responsive)
    =================== */
 .modal {
-  display: none; /* hidden by default */
+  display: none; 
   position: fixed;
-  z-index: 2000;
+  z-index: 9999; /* Higher z-index to stay above Tawk.to and Nav */
   left: 0; top: 0;
   width: 100%; height: 100%;
-  background: rgba(0,0,0,0.7);
+  background: rgba(0,0,0,0.85); /* Darker backdrop for focus */
+  backdrop-filter: blur(5px); /* Premium glassy effect */
   justify-content: center;
   align-items: center;
+  padding: 10px; /* Prevents modal touching screen edges */
 }
 
-/* fade in when active */
 .modal.show { 
   display: flex; 
   animation: fadeIn 0.3s ease; 
 }
 
 .modal-content {
-  background: #0f0f0f;
-  padding: 20px;
-  border-radius: 12px;
-  max-width: 420px;
-  width: 92%;
+  background: #111;
+  padding: 25px 20px;
+  border-radius: 16px;
+  max-width: 400px;
+  width: 100%; /* Flexible width */
   text-align: center;
   color: #fff;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.6);
-  animation: scaleIn 0.25s ease;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.8);
+  position: relative;
+  
+  /* CRITICAL FIX: Stops the modal from being cut off on small screens */
+  max-height: 90vh; 
+  overflow-y: auto; 
+  animation: scaleIn 0.2s ease-out;
 }
 
-.modal-content h2 { margin-bottom: 10px; }
+.modal-content h2 { 
+  margin-bottom: 15px; 
+  font-size: 1.5rem;
+  color: #1abc9c;
+}
 
-.modal-content select {
-  padding: 10px;
+.modal-content p {
+  margin-bottom: 15px;
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* CRITICAL FIX: iOS AUTO-ZOOM PREVENTION */
+.modal-content select, 
+.modal-content input {
+  padding: 12px;
   margin: 10px 0;
   width: 100%;
-  border-radius: 6px;
-  border: none;
+  border-radius: 8px;
+  border: 1px solid #333;
+  background: #222;
+  color: #fff;
+  font-family: 'Rajdhani', sans-serif;
+  
+  /* Setting this to 16px exactly stops iPhones from zooming in/breaking layout */
+  font-size: 16px !important; 
 }
 
-/* Buttons */
+/* Buttons Polish */
+.modal-content .btn-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 15px;
+}
+
 .modal-content .btn {
-  padding: 10px 16px;
-  margin: 6px 4px;
+  width: 100%;
+  padding: 14px;
+  margin: 0;
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   cursor: pointer;
-  font-weight: 600;
-  transition: background 0.3s ease, opacity 0.2s ease;
+  font-weight: 700;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
-.modal-content .btn.add { background: #28a745; color: #fff; }
-.modal-content .btn.cart { background: #1abc9c; color: #fff; }
-.modal-content .btn:hover { opacity: 0.9; }
 
-/* Close button */
+.modal-content .btn.add { background: #28a745; color: #fff; }
+.modal-content .btn.cart { background: #333; color: #fff; border: 1px solid #444; }
+
+/* Close Button Fix */
 .modal .close {
   position: absolute;
-  right: 18px;
-  top: 12px;
-  font-size: 26px;
+  right: 15px;
+  top: 10px;
+  font-size: 30px;
   cursor: pointer;
-  color: #fff;
-  transition: transform 0.2s ease;
+  color: #777;
+  line-height: 1;
 }
-.modal .close:hover { transform: scale(1.1); }
 
-/* Animations */
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to   { opacity: 1; }
-}
-@keyframes scaleIn {
-  from { transform: scale(0.9); opacity: 0; }
-  to   { transform: scale(1); opacity: 1; }
+/* Smooth Animations */
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes scaleIn { from { transform: scale(0.95); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+
+/* Mobile Specific Tweaks */
+@media (max-width: 480px) {
+  .modal-content {
+    padding: 20px 15px;
+  }
+  .modal-content h2 {
+    font-size: 1.3rem;
+  }
 }
 
 
@@ -1298,6 +1335,7 @@ footer a:hover {
   font-weight: 600;
   margin-left: 6px;
 }
+
 
 
 
