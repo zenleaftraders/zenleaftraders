@@ -380,59 +380,46 @@ body.thcflower .order-btn {
 }
 body.thcflower .order-btn:hover { background: #218838; }
 
-/* ===================
-   🛒 Modal Styles (Polished & Responsive)
-   =================== */
+/* Modal backdrop */
 .modal {
-  display: none; 
+  display: none;
   position: fixed;
-  z-index: 9999; /* Higher z-index to stay above Tawk.to and Nav */
-  left: 0; top: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.85); /* Darker backdrop for focus */
-  backdrop-filter: blur(5px); /* Premium glassy effect */
+  inset: 0; /* shorthand for top:0; right:0; bottom:0; left:0 */
+  z-index: 9999;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(5px);
   justify-content: center;
   align-items: center;
-  padding: 10px; /* Prevents modal touching screen edges */
+  overflow-y: auto; /* allow scrolling if content taller than screen */
+  -webkit-overflow-scrolling: touch; /* smooth iOS scrolling */
+  padding: 10px;
 }
 
-.modal.show { 
-  display: flex; 
-  animation: fadeIn 0.3s ease; 
+/* Show modal */
+.modal.show {
+  display: flex;
+  animation: fadeIn 0.3s ease;
 }
 
+/* Modal box */
 .modal-content {
   background: #111;
-  padding: 25px 20px;
+  padding: 20px;
   border-radius: 16px;
   max-width: 400px;
-  width: 100%; /* Flexible width */
-  text-align: center;
+  width: 90%; /* flexible on mobile */
+  max-height: 90vh;
+  overflow-y: auto;
   color: #fff;
   box-shadow: 0 10px 40px rgba(0,0,0,0.8);
   position: relative;
-  
-  /* CRITICAL FIX: Stops the modal from being cut off on small screens */
-  max-height: 90vh; 
-  overflow-y: auto; 
   animation: scaleIn 0.2s ease-out;
 }
 
-.modal-content h2 { 
-  margin-bottom: 15px; 
-  font-size: 1.5rem;
-  color: #1abc9c;
-}
-
-.modal-content p {
-  margin-bottom: 15px;
-  font-size: 1rem;
-  opacity: 0.9;
-}
-
-/* CRITICAL FIX: iOS AUTO-ZOOM PREVENTION */
-.modal-content select, 
+/* Prevent iOS zoom */
+.modal-content select,
 .modal-content input {
+  font-size: 16px !important;
   padding: 12px;
   margin: 10px 0;
   width: 100%;
@@ -440,37 +427,9 @@ body.thcflower .order-btn:hover { background: #218838; }
   border: 1px solid #333;
   background: #222;
   color: #fff;
-  font-family: 'Rajdhani', sans-serif;
-  
-  /* Setting this to 16px exactly stops iPhones from zooming in/breaking layout */
-  font-size: 16px !important; 
 }
 
-/* Buttons Polish */
-.modal-content .btn-group {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-top: 15px;
-}
-
-.modal-content .btn {
-  width: 100%;
-  padding: 14px;
-  margin: 0;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: 700;
-  font-size: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-.modal-content .btn.add { background: #28a745; color: #fff; }
-.modal-content .btn.cart { background: #333; color: #fff; border: 1px solid #444; }
-
-/* Close Button Fix */
+/* Close button */
 .modal .close {
   position: absolute;
   right: 15px;
@@ -478,8 +437,8 @@ body.thcflower .order-btn:hover { background: #218838; }
   font-size: 30px;
   cursor: pointer;
   color: #777;
-  line-height: 1;
 }
+
 
 /* Smooth Animations */
 @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
@@ -1335,6 +1294,7 @@ footer a:hover {
   font-weight: 600;
   margin-left: 6px;
 }
+
 
 
 
