@@ -628,114 +628,73 @@
   </div>
 
   <!-- ✅ JS -->
-  <script>
-document.addEventListener('DOMContentLoaded', () => {
-  // DOM refs (guarded)
+ document.addEventListener('DOMContentLoaded', () => {
   const modal = document.querySelector('#orderModal');
-  const productNameEl = modal ? modal.querySelector('#modalProductName') : null;
-  const sizeSelect = modal ? modal.querySelector('#sizeSelect') : null;
-  const addToCartBtn = modal ? modal.querySelector('#addToCartBtn') : null;
-  const goToCartBtn = modal ? modal.querySelector('#goToCartBtn') : null;
-  const closeBtn = modal ? modal.querySelector('.close') : null;
+  const productNameEl = modal.querySelector('#modalProductName');
+  const sizeSelect = modal.querySelector('#sizeSelect');
+  const addToCartBtn = modal.querySelector('#addToCartBtn');
+  const goToCartBtn = modal.querySelector('#goToCartBtn');
+  const closeBtn = modal.querySelector('.close');
 
-  if (!modal || !productNameEl || !sizeSelect || !addToCartBtn || !goToCartBtn || !closeBtn) {
-    console.warn('Order modal: missing expected elements. Modal script will not initialize.');
-    return;
+  function openModal(productName) {
+    productNameEl.textContent = 'Order — ' + productName;
+    sizeSelect.selectedIndex = 0;
+    modal.classList.add('show');
+    modal.setAttribute('aria-hidden', 'false');
+    modal.dataset.currentProduct = productName;
   }
 
-  // helper: parse price robustly (try value first, else parse last number in text)
-  function parsePriceFromOption(opt) {
-    if (!opt) return 0;
-    // try numeric value first
-    const v = Number(opt.value);
-    if (Number.isFinite(v) && v > 0) {
-      console.debug('parsePriceFromOption: used opt.value:', v);
-      return v;
-    }
-    // fallback: parse ALL numbers in the option text and choose the LAST one
-    const txt = (opt.text || opt.textContent || '').replace(/,/g, '');
-    const matches = txt.match(/\d+(\.\d+)?/g);
-    if (matches && matches.length) {
-      const last = parseFloat(matches[matches.length - 1]);
-      console.debug('parsePriceFromOption: parsed from text, matches=', matches, '->', last);
-      return last;
-    }
-    console.debug('parsePriceFromOption: no price found, returning 0 for opt:', opt);
-    return 0;
-  }
-
-  // open modal when clicking an order button (product-card must contain <h3> or button may have data-product)
-  document.querySelectorAll('.order-btn').forEach(btn => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      const card = btn.closest('.product-card');
-      const nameFromCard = card ? (card.querySelector('h3')?.innerText?.trim()) : null;
-      const productName = btn.dataset.product || nameFromCard || 'Product';
-      productNameEl.textContent = 'Order — ' + productName;
-      // store current product on the modal element to avoid globals
-      modal.dataset.currentProduct = productName;
-      // reset select
-      sizeSelect.selectedIndex = 0;
-      // show modal (assumes .show toggles display in CSS)
-      modal.classList.add('show');
-      modal.setAttribute('aria-hidden', 'false');
-    });
-  });
-
-  // close handlers
-  closeBtn.addEventListener('click', closeModal);
-  window.addEventListener('click', e => { if (e.target === modal) closeModal(); });
   function closeModal() {
     modal.classList.remove('show');
     modal.setAttribute('aria-hidden', 'true');
     delete modal.dataset.currentProduct;
   }
 
-  // Add to cart: robust and canonical
+  // Open modal when clicking order buttons
+  document.querySelectorAll('.order-btn').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.preventDefault();
+      const card = btn.closest('.product-card');
+      const name = btn.dataset.product || card?.querySelector('h3')?.innerText || 'Product';
+      openModal(name.trim());
+    });
+  });
+
+  // Close modal
+  closeBtn.addEventListener('click', closeModal);
+  window.addEventListener('click', e => {
+    if (e.target.classList.contains('modal')) closeModal();
+  });
+
+  // Add to cart
   addToCartBtn.addEventListener('click', () => {
-    const currentProduct = modal.dataset.currentProduct || null;
-    if (!currentProduct) return alert('No product selected.');
-
+    const currentProduct = modal.dataset.currentProduct;
     const opt = sizeSelect.options[sizeSelect.selectedIndex];
-    const price = parsePriceFromOption(opt) || 0;
-    const sizeLabel = (opt && (opt.text || opt.textContent)) ? String(opt.text || opt.textContent).split('-')[0].trim() : '';
+    const price = Number(opt.value);
+    const sizeLabel = opt.text.split('-')[0].trim();
 
-    // create canonical item
-    const item = { name: currentProduct, size: sizeLabel, price: Number(price) || 0, quantity: 1 };
+    const item = { name: currentProduct, size: sizeLabel, price, quantity: 1 };
 
-    // if shared API exists, use it (keeps everything consistent)
-    if (window.ZLCart && typeof window.ZLCart.add === 'function') {
-      window.ZLCart.add(item);
-    } else {
-      // fallback: store canonical items array in localStorage
-      try {
-        const raw = JSON.parse(localStorage.getItem('cart') || '[]');
-        // raw may be legacy form; we append canonical item
-        raw.push(item);
-        localStorage.setItem('cart', JSON.stringify(raw));
-        // attempt to update any badges that use cartCount/cart-count classes/ids
-        const count = raw.reduce((s, it) => s + (Number(it.quantity) || 0), 0);
-        document.querySelectorAll('#cart-count, #cartCount, .cart-count, .cart-badge').forEach(el => el.textContent = count);
-        // dispatch event
-        document.dispatchEvent(new CustomEvent('cart:updated'));
-      } catch (err) {
-        console.error('Failed to save cart fallback:', err);
-      }
-    }
+    // Save to localStorage
+    const raw = JSON.parse(localStorage.getItem('cart') || '[]');
+    raw.push(item);
+    localStorage.setItem('cart', JSON.stringify(raw));
+
+    // Update badge
+    const count = raw.reduce((s, it) => s + (Number(it.quantity) || 0), 0);
+    document.querySelectorAll('#cart-count, .cart-count').forEach(el => el.textContent = count);
 
     alert(`${currentProduct} — ${sizeLabel} added to cart ($${price})`);
-    // update badge if ZLCart has renderer
-    if (window.ZLCart && typeof window.ZLCart.renderBadge === 'function') window.ZLCart.renderBadge();
-
     closeModal();
   });
 
-  // add then go to cart
+  // Add then go to cart
   goToCartBtn.addEventListener('click', () => {
     addToCartBtn.click();
     setTimeout(() => { window.location.href = 'cart.html'; }, 200);
   });
 });
+
 </script>
 
 
@@ -856,6 +815,7 @@ setTimeout(initGoogleTranslate, 1800000);
 
 </body>
 </html>
+
 
 
 
