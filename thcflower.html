@@ -606,13 +606,13 @@
         modal.classList.add('show');
         modal.setAttribute('aria-hidden', 'false');
         modal.dataset.currentProduct = productName;
-        document.body.style.overflow = 'hidden'; // Lock background
+        document.body.classList.add('modal-open'); // Lock background
       }
 
       function closeModal() {
         modal.classList.remove('show');
         modal.setAttribute('aria-hidden', 'true');
-        document.body.style.overflow = ''; // Unlock background
+        document.body.classList.remove('modal-open'); // Unlock background
       }
 
       document.querySelectorAll('.order-btn').forEach(btn => {
@@ -768,6 +768,7 @@ setTimeout(initGoogleTranslate, 1800000);
 
 </body>
 </html>
+
 
 
 
