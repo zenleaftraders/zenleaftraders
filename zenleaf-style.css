@@ -385,12 +385,12 @@ body.thcflower .order-btn {
 
 .modal {
   position: fixed;
-  inset: 0;                 /* replaces top/left/width/height */
-  display: none;
+  inset: 0;
+  display: none;   /* keep ONLY this */
+
   z-index: 99999;
   background: rgba(0, 0, 0, 0.85);
-  
-  display: flex;
+
   justify-content: center;
   align-items: center;
 
@@ -1302,6 +1302,7 @@ footer a:hover {
   font-weight: 600;
   margin-left: 6px;
 }
+
 
 
 
