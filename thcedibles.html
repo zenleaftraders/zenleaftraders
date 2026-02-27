@@ -249,43 +249,17 @@
 
   </main>
 
-  
-  <footer>
-  <div class="footer-contact">
-    <a href="mailto:sales@zenleaftrader.com">
-      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
-        <path d="M2 4a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4zm2 0v.01L12 11l8-6.99V4H4zm0 16h16V7.236l-8 6.99-8-6.99V20z"/>
-      </svg>
-      sales@zenleaftrader.com
-    </a>
-  </div>
-
-  <div class="footer-blog">
-    <a href="blog.html">
-      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
-        <path d="M4 4h16v2H4V4zm0 6h10v2H4v-2zm0 6h16v2H4v-2z"/>
-      </svg>
-      Blog
-    </a>
-  </div>
-
-  <p>&copy; 2018–2025 ZenLeaf Traders. All rights reserved.</p>
-</footer>
-
-
+   <!-- MENU SCRIPT -->
   <script>
     function toggleMenu() {
       document.getElementById("main-menu").classList.toggle("active");
     }
-
     function toggleDropdown(event) {
       event.preventDefault();
       event.stopPropagation();
       const dropdown = event.target.closest('.dropdown');
       dropdown.classList.toggle("open");
     }
-
-    // Close dropdown if click outside
     document.addEventListener("click", function (e) {
       document.querySelectorAll('.dropdown').forEach(drop => {
         if (!drop.contains(e.target)) {
@@ -295,7 +269,7 @@
     });
   </script>
 
- <!-- 🛒 Order Now Modal for Edibles -->
+<!-- 🛒 Order Now Modal for Edibles -->
 <div id="orderModalEdibles" class="modal" aria-hidden="true">
   <div class="modal-content">
     <span class="close" title="close">&times;</span>
@@ -318,6 +292,8 @@
   </div>
 </div>
 
+ <script src="assets/js/cart.js"></script>
+
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   const modal = document.querySelector('#orderModalEdibles');
@@ -338,25 +314,33 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // --- open modal ---
-  document.querySelectorAll('.product-card .order-btn').forEach(btn => {
-    btn.addEventListener('click', e => {
-      e.preventDefault();
-      const card = btn.closest('.product-card');
-      const productName = card ? (card.querySelector('h3')?.innerText.trim()) : 'Product';
-      productNameEl.textContent = 'Order — ' + productName;
-      modal.dataset.currentProduct = productName;
-      sizeSelect.selectedIndex = 0;
-      modal.classList.add('show');
-      modal.setAttribute('aria-hidden', 'false');
-    });
+document.querySelectorAll('.product-card .order-btn').forEach(btn => {
+  btn.addEventListener('click', e => {
+    e.preventDefault();
+
+    const card = btn.closest('.product-card');
+    const productName = card ? (card.querySelector('h3')?.innerText.trim()) : 'Product';
+
+    productNameEl.textContent = 'Order — ' + productName;
+    modal.dataset.currentProduct = productName;
+    sizeSelect.selectedIndex = 0;
+
+    modal.classList.add('show');
+    modal.setAttribute('aria-hidden', 'false');
+
+    document.body.classList.add('modal-open'); // ✅ LOCK BACKGROUND
   });
+});
 
   // --- close modal ---
-  function closeModal() {
-    modal.classList.remove('show');
-    modal.setAttribute('aria-hidden', 'true');
-    delete modal.dataset.currentProduct;
-  }
+ function closeModal() {
+  modal.classList.remove('show');
+  modal.setAttribute('aria-hidden', 'true');
+
+  document.body.classList.remove('modal-open'); // ✅ UNLOCK BACKGROUND
+
+  delete modal.dataset.currentProduct;
+}
   closeBtn.addEventListener('click', closeModal);
   window.addEventListener('click', e => { if (e.target === modal) closeModal(); });
 
@@ -397,7 +381,31 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
-<script src="assets/js/cart.js"></script>
+<script src="cart.js"></script>
+  
+  <footer>
+  <div class="footer-contact">
+    <a href="mailto:sales@zenleaftrader.com">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
+        <path d="M2 4a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V4zm2 0v.01L12 11l8-6.99V4H4zm0 16h16V7.236l-8 6.99-8-6.99V20z"/>
+      </svg>
+      sales@zenleaftrader.com
+    </a>
+  </div>
+
+  <div class="footer-blog">
+    <a href="blog.html">
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24">
+        <path d="M4 4h16v2H4V4zm0 6h10v2H4v-2zm0 6h16v2H4v-2z"/>
+      </svg>
+      Blog
+    </a>
+  </div>
+
+  <p>&copy; 2018–2025 ZenLeaf Traders. All rights reserved.</p>
+</footer>
+
+
 
 <div id="live-notifications" class="live-notifications"></div>
 
@@ -509,6 +517,7 @@ function googleTranslateElementInit() {
 
 </body>
 </html>
+
 
 
 
