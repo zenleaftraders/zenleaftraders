@@ -186,14 +186,29 @@
   </div>
 </div>
 
-
-
-  </div>
-</section>
-
-
     </div> <!-- end products-grid -->
   </main>
+
+  
+   <!-- MENU SCRIPT -->
+  <script>
+    function toggleMenu() {
+      document.getElementById("main-menu").classList.toggle("active");
+    }
+    function toggleDropdown(event) {
+      event.preventDefault();
+      event.stopPropagation();
+      const dropdown = event.target.closest('.dropdown');
+      dropdown.classList.toggle("open");
+    }
+    document.addEventListener("click", function (e) {
+      document.querySelectorAll('.dropdown').forEach(drop => {
+        if (!drop.contains(e.target)) {
+          drop.classList.remove("open");
+        }
+      });
+    });
+  </script>
 
   <!-- 🛒 Order Now Modal for Vapes -->
   <div id="orderModalVapes" class="modal" aria-hidden="true">
@@ -216,6 +231,8 @@
       </form>
     </div>
   </div>
+
+   <script src="assets/js/cart.js"></script>
 
   <!-- Modal JS (same robust pattern as flower + edibles) -->
   <script>
@@ -243,24 +260,28 @@
     }
 
     // open modal
-    document.querySelectorAll('.product-card .order-btn').forEach(btn => {
-      btn.addEventListener('click', e => {
-        e.preventDefault();
-        const card = btn.closest('.product-card');
-        const productName = card ? (card.querySelector('h3')?.innerText.trim()) : 'Product';
-        productNameEl.textContent = 'Order — ' + productName;
-        modal.dataset.currentProduct = productName;
-        sizeSelect.selectedIndex = 0;
-        modal.classList.add('show');
-        modal.setAttribute('aria-hidden', 'false');
-      });
-    });
+document.querySelectorAll('.product-card .order-btn').forEach(btn => {
+  btn.addEventListener('click', e => {
+    e.preventDefault();
+    const card = btn.closest('.product-card');
+    const productName = card ? (card.querySelector('h3')?.innerText.trim()) : 'Product';
+
+    productNameEl.textContent = 'Order — ' + productName;
+    modal.dataset.currentProduct = productName;
+    sizeSelect.selectedIndex = 0;
+
+    modal.classList.add('show');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('modal-open');   // 🔥 ADD THIS
+  });
+});
 
     function closeModal() {
-      modal.classList.remove('show');
-      modal.setAttribute('aria-hidden', 'true');
-      delete modal.dataset.currentProduct;
-    }
+  modal.classList.remove('show');
+  modal.setAttribute('aria-hidden', 'true');
+  document.body.classList.remove('modal-open'); // 🔥 ADD THIS
+  delete modal.dataset.currentProduct;
+}
     closeBtn.addEventListener('click', closeModal);
     window.addEventListener('click', e => { if (e.target === modal) closeModal(); });
 
@@ -465,6 +486,7 @@ setTimeout(initGoogleTranslate, 1800000);
 
 </body>
 </html>
+
 
 
 
