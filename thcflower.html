@@ -521,6 +521,151 @@
 
 </main>
 
+ <!-- MENU SCRIPT -->
+  <script>
+    function toggleMenu() {
+      document.getElementById("main-menu").classList.toggle("active");
+    }
+    function toggleDropdown(event) {
+      event.preventDefault();
+      event.stopPropagation();
+      const dropdown = event.target.closest('.dropdown');
+      dropdown.classList.toggle("open");
+    }
+    document.addEventListener("click", function (e) {
+      document.querySelectorAll('.dropdown').forEach(drop => {
+        if (!drop.contains(e.target)) {
+          drop.classList.remove("open");
+        }
+      });
+    });
+  </script>
+
+  <!-- 🛒 Order Now Modal -->
+  <div id="orderModal" class="modal" aria-hidden="true">
+    <div class="modal-content">
+      <span class="close" title="close">&times;</span>
+      <h2 id="modalProductName">Order</h2>
+      <p>Select size / price:</p>
+      <form id="orderForm">
+        <select id="sizeSelect" aria-label="Size">
+          <!-- Options populated by JS -->
+        </select>
+        <div style="margin-top:20px; display: flex; gap: 10px;">
+          <button type="button" id="addToCartBtn" class="btn add" style="flex:1; background:#28a745; color:white; padding:12px; border-radius:8px; border:none; font-weight:bold; cursor:pointer;">Add to Cart</button>
+          <button type="button" id="goToCartBtn" class="btn cart" style="flex:1; background:#1abc9c; color:white; padding:12px; border-radius:8px; border:none; font-weight:bold; cursor:pointer;">View Cart</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+ <script src="assets/js/cart.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+
+  const modal = document.querySelector('#orderModal');
+  if (!modal) return;
+
+  const productNameEl = modal.querySelector('#modalProductName');
+  const sizeSelect = modal.querySelector('#sizeSelect');
+  const addToCartBtn = modal.querySelector('#addToCartBtn');
+  const goToCartBtn = modal.querySelector('#goToCartBtn');
+  const closeBtn = modal.querySelector('.close');
+
+  function closeModal() {
+    modal.classList.remove('show');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('modal-open');
+    delete modal.dataset.currentProduct;
+  }
+
+  document.querySelectorAll('.product-card .order-btn').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.preventDefault();
+
+      const card = btn.closest('.product-card');
+      if (!card) return;
+
+      const nameEl = card.querySelector('h3');
+      const pricingEl = card.querySelector('.pricing');
+
+      if (!nameEl || !pricingEl) return;
+
+      const productName = nameEl.textContent.trim();
+      productNameEl.textContent = 'Order — ' + productName;
+      modal.dataset.currentProduct = productName;
+
+      // Build options safely
+      const pricingText = pricingEl.textContent || '';
+      const options = [];
+
+      pricingText.split('|').forEach(line => {
+        const parts = line.split(':');
+        if (parts.length < 2) return;
+
+        const label = parts[0].trim();
+        const priceText = parts[1].trim();
+        const price = priceText.replace('$', '').replace(',', '');
+
+        options.push(
+          `<option value="${price}">${label} - ${priceText}</option>`
+        );
+      });
+
+      sizeSelect.innerHTML = options.length
+        ? options.join('')
+        : '<option value="0">Unavailable</option>';
+
+      modal.classList.add('show');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('modal-open');
+    });
+  });
+
+  closeBtn.addEventListener('click', closeModal);
+  window.addEventListener('click', e => {
+    if (e.target === modal) closeModal();
+  });
+
+  addToCartBtn.addEventListener('click', () => {
+
+    const currentProduct = modal.dataset.currentProduct;
+    if (!currentProduct) return;
+
+    const opt = sizeSelect.options[sizeSelect.selectedIndex];
+    if (!opt) return;
+
+    const price = Number(opt.value) || 0;
+    const sizeLabel = (opt.text || '').split('-')[0].trim();
+
+    const item = {
+      name: currentProduct,
+      size: sizeLabel,
+      price,
+      quantity: 1
+    };
+
+    const raw = JSON.parse(localStorage.getItem('cart') || '[]');
+    raw.push(item);
+    localStorage.setItem('cart', JSON.stringify(raw));
+
+    closeModal();
+  });
+
+  goToCartBtn.addEventListener('click', () => {
+    addToCartBtn.click();
+    setTimeout(() => {
+      window.location.href = 'cart.html';
+    }, 200);
+  });
+
+});
+</script>
+
+<script src="cart.js"></script>
+
+
   <section class="country-links">
     <h2>Buying THC Flower in Europe</h2>
     <p>
@@ -547,129 +692,6 @@
     <p>&copy; 2018–2025 ZenLeaf Traders. All rights reserved.</p>
   </footer>
 
-  <!-- 🛒 Order Now Modal -->
-  <div id="orderModal" class="modal" aria-hidden="true">
-    <div class="modal-content">
-      <span class="close" title="close">&times;</span>
-      <h2 id="modalProductName">Order</h2>
-      <p>Select size / price:</p>
-      <form id="orderForm">
-        <select id="sizeSelect" aria-label="Size">
-          <!-- Options populated by JS -->
-        </select>
-        <div style="margin-top:20px; display: flex; gap: 10px;">
-          <button type="button" id="addToCartBtn" class="btn add" style="flex:1; background:#28a745; color:white; padding:12px; border-radius:8px; border:none; font-weight:bold; cursor:pointer;">Add to Cart</button>
-          <button type="button" id="goToCartBtn" class="btn cart" style="flex:1; background:#1abc9c; color:white; padding:12px; border-radius:8px; border:none; font-weight:bold; cursor:pointer;">View Cart</button>
-        </div>
-      </form>
-    </div>
-  </div>
-
-  <script>
-    function toggleMenu() {
-      document.getElementById("main-menu").classList.toggle("active");
-    }
-    function toggleDropdown(event) {
-      event.preventDefault();
-      event.stopPropagation();
-      const dropdown = event.target.closest('.dropdown');
-      dropdown.classList.toggle("open");
-    }
-    document.addEventListener("click", function (e) {
-      document.querySelectorAll('.dropdown').forEach(drop => {
-        if (!drop.contains(e.target)) drop.classList.remove("open");
-      });
-    });
-
-    // --- MODAL LOGIC ---
-    document.addEventListener('DOMContentLoaded', () => {
-      const modal = document.querySelector('#orderModal');
-      const productNameEl = modal.querySelector('#modalProductName');
-      const sizeSelect = modal.querySelector('#sizeSelect');
-      const addToCartBtn = modal.querySelector('#addToCartBtn');
-      const goToCartBtn = modal.querySelector('#goToCartBtn');
-      const closeBtn = modal.querySelector('.close');
-
-     function openModal(productName, pricingText) {
-  productNameEl.textContent = 'Order — ' + productName;
-
-  const options = (pricingText || '')
-    .split('|')
-    .map(opt => {
-      const parts = opt.split(':');
-      if (parts.length < 2) return '';
-
-      const label = parts[0].trim();
-      const price = parts[1].trim();
-      const priceValue = price.replace('$', '').replace(',', '');
-
-      return `<option value="${priceValue}">${label} - ${price}</option>`;
-    })
-    .join('');
-
-  sizeSelect.innerHTML = options || '<option value="0">Unavailable</option>';
-
-  modal.classList.add('show');
-  modal.setAttribute('aria-hidden', 'false');
-  modal.dataset.currentProduct = productName;
-  document.body.classList.add('modal-open');
-}
-
-      function closeModal() {
-        modal.classList.remove('show');
-        modal.setAttribute('aria-hidden', 'true');
-        document.body.classList.remove('modal-open'); // Unlock background
-      }
-
-     document.querySelectorAll('.order-btn').forEach(btn => {
-  btn.addEventListener('click', e => {
-    e.preventDefault();
-
-    const card = btn.closest('.product-card');
-    if (!card) return;
-
-    const nameEl = card.querySelector('h3');
-    const pricingEl = card.querySelector('.pricing');
-
-    if (!nameEl || !pricingEl) {
-      console.error('Missing h3 or pricing element in product card.');
-      return;
-    }
-
-    const name = nameEl.textContent.split('\n')[0].trim();
-    const pricing = pricingEl.textContent || '';
-
-    openModal(name, pricing);
-  });
-});
-
-      closeBtn.addEventListener('click', closeModal);
-      window.addEventListener('click', e => { if (e.target === modal) closeModal(); });
-
-      addToCartBtn.addEventListener('click', () => {
-        const currentProduct = modal.dataset.currentProduct;
-        const opt = sizeSelect.options[sizeSelect.selectedIndex];
-        const price = Number(opt.value);
-        const sizeLabel = opt.text.split('-')[0].trim();
-        const item = { name: currentProduct, size: sizeLabel, price, quantity: 1 };
-        const raw = JSON.parse(localStorage.getItem('cart') || '[]');
-        raw.push(item);
-        localStorage.setItem('cart', JSON.stringify(raw));
-        const count = raw.reduce((s, it) => s + (Number(it.quantity) || 0), 0);
-        document.querySelectorAll('#cart-count, .cart-count').forEach(el => el.textContent = count);
-        alert(`${currentProduct} — ${sizeLabel} added to cart ($${price})`);
-        closeModal();
-      });
-
-      goToCartBtn.addEventListener('click', () => {
-        addToCartBtn.click();
-        setTimeout(() => { window.location.href = 'cart.html'; }, 200);
-      });
-    });
-  </script>
-
-
-  <script src="assets/js/cart.js"></script>
 
   
 <div id="live-notifications" class="live-notifications"></div>
@@ -786,6 +808,7 @@ setTimeout(initGoogleTranslate, 1800000);
 
 </body>
 </html>
+
 
 
 
