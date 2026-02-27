@@ -326,25 +326,7 @@ document.querySelectorAll('.product-card .order-btn').forEach(btn => {
   });
   </script>
 
-  <!-- shared scripts -->
-  <script>
-    function toggleMenu() {
-      document.getElementById("main-menu").classList.toggle("active");
-    }
-    function toggleDropdown(event) {
-      event.preventDefault();
-      event.stopPropagation();
-      const dropdown = event.target.closest('.dropdown');
-      dropdown.classList.toggle("open");
-    }
-    document.addEventListener("click", function (e) {
-      document.querySelectorAll('.dropdown').forEach(drop => {
-        if (!drop.contains(e.target)) drop.classList.remove("open");
-      });
-    });
-  </script>
-
-  <script src="assets/js/cart.js"></script>
+  <script src="cart.js"></script>
 
   
   <footer>
@@ -370,11 +352,7 @@ document.querySelectorAll('.product-card .order-btn').forEach(btn => {
 </footer>
 
 
-
-
 <div id="live-notifications" class="live-notifications"></div>
-
-
 
 <script>
   const names = [
@@ -486,6 +464,7 @@ setTimeout(initGoogleTranslate, 1800000);
 
 </body>
 </html>
+
 
 
 
