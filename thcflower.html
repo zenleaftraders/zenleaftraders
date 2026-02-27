@@ -590,24 +590,30 @@
       const goToCartBtn = modal.querySelector('#goToCartBtn');
       const closeBtn = modal.querySelector('.close');
 
-      function openModal(productName, pricingText) {
-        productNameEl.textContent = 'Order — ' + productName;
-        
-        // DYNAMIC PRICING: Parse the pricing from the card
-        const options = pricingText.split('|').map(opt => {
-          const parts = opt.split(':');
-          const label = parts[0].trim();
-          const price = parts[1] ? parts[1].trim() : '0';
-          const priceValue = price.replace('$', '').replace(',', '');
-          return `<option value="${priceValue}">${label} - ${price}</option>`;
-        }).join('');
-        
-        sizeSelect.innerHTML = options;
-        modal.classList.add('show');
-        modal.setAttribute('aria-hidden', 'false');
-        modal.dataset.currentProduct = productName;
-        document.body.classList.add('modal-open'); // Lock background
-      }
+     function openModal(productName, pricingText) {
+  productNameEl.textContent = 'Order — ' + productName;
+
+  const options = (pricingText || '')
+    .split('|')
+    .map(opt => {
+      const parts = opt.split(':');
+      if (parts.length < 2) return '';
+
+      const label = parts[0].trim();
+      const price = parts[1].trim();
+      const priceValue = price.replace('$', '').replace(',', '');
+
+      return `<option value="${priceValue}">${label} - ${price}</option>`;
+    })
+    .join('');
+
+  sizeSelect.innerHTML = options || '<option value="0">Unavailable</option>';
+
+  modal.classList.add('show');
+  modal.setAttribute('aria-hidden', 'false');
+  modal.dataset.currentProduct = productName;
+  document.body.classList.add('modal-open');
+}
 
       function closeModal() {
         modal.classList.remove('show');
@@ -615,15 +621,27 @@
         document.body.classList.remove('modal-open'); // Unlock background
       }
 
-      document.querySelectorAll('.order-btn').forEach(btn => {
-        btn.addEventListener('click', e => {
-          e.preventDefault();
-          const card = btn.closest('.product-card');
-          const name = card.querySelector('h3').innerText.split('\n')[0].trim();
-          const pricing = card.querySelector('.pricing').innerText;
-          openModal(name, pricing);
-        });
-      });
+     document.querySelectorAll('.order-btn').forEach(btn => {
+  btn.addEventListener('click', e => {
+    e.preventDefault();
+
+    const card = btn.closest('.product-card');
+    if (!card) return;
+
+    const nameEl = card.querySelector('h3');
+    const pricingEl = card.querySelector('.pricing');
+
+    if (!nameEl || !pricingEl) {
+      console.error('Missing h3 or pricing element in product card.');
+      return;
+    }
+
+    const name = nameEl.textContent.split('\n')[0].trim();
+    const pricing = pricingEl.textContent || '';
+
+    openModal(name, pricing);
+  });
+});
 
       closeBtn.addEventListener('click', closeModal);
       window.addEventListener('click', e => { if (e.target === modal) closeModal(); });
@@ -768,6 +786,7 @@ setTimeout(initGoogleTranslate, 1800000);
 
 </body>
 </html>
+
 
 
 
