@@ -541,127 +541,22 @@
     });
   </script>
 
-  <!-- 🛒 Order Now Modal -->
-  <div id="orderModal" class="modal" aria-hidden="true">
-    <div class="modal-content">
-      <span class="close" title="close">&times;</span>
-      <h2 id="modalProductName">Order</h2>
-      <p>Select size / price:</p>
-      <form id="orderForm">
-        <select id="sizeSelect" aria-label="Size">
-          <!-- Options populated by JS -->
-        </select>
-        <div style="margin-top:20px; display: flex; gap: 10px;">
-          <button type="button" id="addToCartBtn" class="btn add" style="flex:1; background:#28a745; color:white; padding:12px; border-radius:8px; border:none; font-weight:bold; cursor:pointer;">Add to Cart</button>
-          <button type="button" id="goToCartBtn" class="btn cart" style="flex:1; background:#1abc9c; color:white; padding:12px; border-radius:8px; border:none; font-weight:bold; cursor:pointer;">View Cart</button>
-        </div>
-      </form>
+ <!-- GLOBAL ORDER MODAL -->
+<div id="orderModal" class="modal" aria-hidden="true">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    <h2 id="modalProductName">Order</h2>
+
+    <p>Select option:</p>
+
+    <select id="sizeSelect"></select>
+
+    <div style="margin-top:12px;">
+      <button type="button" id="addToCartBtn" class="btn add">Add to Cart</button>
+      <button type="button" id="goToCartBtn" class="btn cart">View Cart</button>
     </div>
   </div>
-
- <script src="assets/js/cart.js"></script>
-
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-
-  const modal = document.querySelector('#orderModal');
-  if (!modal) return;
-
-  const productNameEl = modal.querySelector('#modalProductName');
-  const sizeSelect = modal.querySelector('#sizeSelect');
-  const addToCartBtn = modal.querySelector('#addToCartBtn');
-  const goToCartBtn = modal.querySelector('#goToCartBtn');
-  const closeBtn = modal.querySelector('.close');
-
-  function closeModal() {
-    modal.classList.remove('show');
-    modal.setAttribute('aria-hidden', 'true');
-    document.body.classList.remove('modal-open');
-    delete modal.dataset.currentProduct;
-  }
-
-  document.querySelectorAll('.product-card .order-btn').forEach(btn => {
-    btn.addEventListener('click', e => {
-      e.preventDefault();
-
-      const card = btn.closest('.product-card');
-      if (!card) return;
-
-      const nameEl = card.querySelector('h3');
-      const pricingEl = card.querySelector('.pricing');
-
-      if (!nameEl || !pricingEl) return;
-
-      const productName = nameEl.textContent.trim();
-      productNameEl.textContent = 'Order — ' + productName;
-      modal.dataset.currentProduct = productName;
-
-      // Build options safely
-      const pricingText = pricingEl.textContent || '';
-      const options = [];
-
-      pricingText.split('|').forEach(line => {
-        const parts = line.split(':');
-        if (parts.length < 2) return;
-
-        const label = parts[0].trim();
-        const priceText = parts[1].trim();
-        const price = priceText.replace('$', '').replace(',', '');
-
-        options.push(
-          `<option value="${price}">${label} - ${priceText}</option>`
-        );
-      });
-
-      sizeSelect.innerHTML = options.length
-        ? options.join('')
-        : '<option value="0">Unavailable</option>';
-
-      modal.classList.add('show');
-      modal.setAttribute('aria-hidden', 'false');
-      document.body.classList.add('modal-open');
-    });
-  });
-
-  closeBtn.addEventListener('click', closeModal);
-  window.addEventListener('click', e => {
-    if (e.target === modal) closeModal();
-  });
-
-  addToCartBtn.addEventListener('click', () => {
-
-    const currentProduct = modal.dataset.currentProduct;
-    if (!currentProduct) return;
-
-    const opt = sizeSelect.options[sizeSelect.selectedIndex];
-    if (!opt) return;
-
-    const price = Number(opt.value) || 0;
-    const sizeLabel = (opt.text || '').split('-')[0].trim();
-
-    const item = {
-      name: currentProduct,
-      size: sizeLabel,
-      price,
-      quantity: 1
-    };
-
-    const raw = JSON.parse(localStorage.getItem('cart') || '[]');
-    raw.push(item);
-    localStorage.setItem('cart', JSON.stringify(raw));
-
-    closeModal();
-  });
-
-  goToCartBtn.addEventListener('click', () => {
-    addToCartBtn.click();
-    setTimeout(() => {
-      window.location.href = 'cart.html';
-    }, 200);
-  });
-
-});
-</script>
+</div>
 
 <script src="cart.js"></script>
 
@@ -808,6 +703,7 @@ setTimeout(initGoogleTranslate, 1800000);
 
 </body>
 </html>
+
 
 
 
