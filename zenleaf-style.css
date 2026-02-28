@@ -355,42 +355,17 @@ body.thcflower .product-card:hover {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
-/* --- Premium Modal (The Fix) --- */
-.modal-content {
-  background: rgba(15, 15, 15, 0.95);
-  backdrop-filter: blur(15px);
-  padding: 30px;
-  border-radius: 28px; /* Modern rounded look */
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  max-width: 400px;
-  width: 92%;
-  position: relative;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
-}
-
-/* Make the "Order Now" button pop */
-body.thcflower .order-btn {
-  background: #28a745;
-  width: 100%; /* Full width looks better on mobile */
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  padding: 12px;
-  border-radius: 12px;
-}
-
-/* ====================== FIXED MOBILE MODAL ====================== */
-
-/* ====================== ZENLEAF UNIVERSAL MODAL FIX ====================== */
+/* ====================== ZENLEAF GLOBAL MODAL ====================== */
 
 .modal {
   position: fixed;
   inset: 0;
-  display: none;   /* keep ONLY this */
-
+  display: none;
   z-index: 99999;
+
   background: rgba(0, 0, 0, 0.85);
 
+  display: none;
   justify-content: center;
   align-items: center;
 
@@ -406,21 +381,23 @@ body.thcflower .order-btn {
   background: #111;
   width: 100%;
   max-width: 420px;
-  max-height: 90vh;
-  overflow-y: auto;
+  max-height: 85vh;
 
-  padding: 28px 20px;
-  border-radius: 22px;
+  padding: 30px 22px;
+  border-radius: 24px;
   border: 1px solid rgba(255,255,255,0.08);
 
-  box-shadow: 0 25px 60px rgba(0,0,0,0.8);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.9);
 
   position: relative;
+
+  overflow-y: auto;
+
   animation: modalPop 0.25s ease-out;
 }
 
 /* Close Button */
-.modal .close {
+.close-modal {
   position: absolute;
   top: 14px;
   right: 18px;
@@ -429,7 +406,7 @@ body.thcflower .order-btn {
   color: #aaa;
 }
 
-.modal .close:hover {
+.close-modal:hover {
   color: #fff;
 }
 
@@ -437,27 +414,27 @@ body.thcflower .order-btn {
 .modal-content select {
   width: 100%;
   padding: 12px;
-  font-size: 16px; /* prevents iOS zoom */
+  font-size: 16px;
   border-radius: 10px;
   border: 1px solid #444;
   background: #222;
   color: #fff;
-  margin-top: 10px;
+  margin-top: 12px;
 }
 
 /* Animation */
 @keyframes modalPop {
   from {
     opacity: 0;
-    transform: scale(0.9);
+    transform: translateY(-10px) scale(0.95);
   }
   to {
     opacity: 1;
-    transform: scale(1);
+    transform: translateY(0) scale(1);
   }
 }
 
-/* Prevent body scroll when modal open */
+/* Lock body scroll */
 body.modal-open {
   overflow: hidden;
 }
@@ -1302,6 +1279,7 @@ footer a:hover {
   font-weight: 600;
   margin-left: 6px;
 }
+
 
 
 
