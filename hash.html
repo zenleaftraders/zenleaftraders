@@ -160,109 +160,22 @@
     });
   </script>
 
-  <!-- 🛒 ORDER MODAL FOR HASH -->
-  <div id="orderModalHash" class="modal" aria-hidden="true">
-    <div class="modal-content">
-      <span class="close" title="Close">&times;</span>
-      <h2 id="modalProductNameHash">Order</h2>
-      <p>Select hash size / price:</p>
+ <!-- GLOBAL ORDER MODAL -->
+<div id="orderModal" class="modal" aria-hidden="true">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    <h2 id="modalProductName">Order</h2>
 
-      <form id="orderFormHash">
-        <select id="sizeSelectHash" aria-label="Hash size">
-          <option value="150">7g - $150</option>
-          <option value="260">14g - $260</option>
-          <option value="470">28g - $470</option>
-        </select>
+    <p>Select option:</p>
 
-        <div style="margin-top:12px;">
-          <button type="button" id="addToCartBtnHash" class="btn add">Add to Cart</button>
-          <button type="button" id="goToCartBtnHash" class="btn cart">View Cart</button>
-        </div>
-      </form>
+    <select id="sizeSelect"></select>
+
+    <div style="margin-top:12px;">
+      <button type="button" id="addToCartBtn" class="btn add">Add to Cart</button>
+      <button type="button" id="goToCartBtn" class="btn cart">View Cart</button>
     </div>
   </div>
-
- 
-  <script src="assets/js/cart.js"></script>
-
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-  const modal = document.querySelector('#orderModalHash');
-  const productNameEl = modal.querySelector('#modalProductNameHash');
-  const sizeSelect = modal.querySelector('#sizeSelectHash');
-  const addToCartBtn = modal.querySelector('#addToCartBtnHash');
-  const goToCartBtn = modal.querySelector('#goToCartBtnHash');
-  const closeBtn = modal.querySelector('.close');
-
-  // --- helper: extract price ---
-  function parsePriceFromOption(opt) {
-    if (!opt) return 0;
-    const v = Number(opt.value);
-    if (Number.isFinite(v) && v > 0) return v;
-    const txt = (opt.text || '').replace(/,/g, '');
-    const matches = txt.match(/\d+(\.\d+)?/g);
-    return matches ? parseFloat(matches[matches.length - 1]) : 0;
-  }
-
-  // --- open modal ---
-  document.querySelectorAll('.product-card .order-btn').forEach(btn => {
-    btn.addEventListener('click', e => {
-      e.preventDefault();
-      const card = btn.closest('.product-card');
-      const productName = card ? (card.querySelector('h3')?.innerText.trim()) : 'Product';
-      productNameEl.textContent = 'Order — ' + productName;
-      modal.dataset.currentProduct = productName;
-      sizeSelect.selectedIndex = 0;
-      modal.classList.add('show');
-      modal.setAttribute('aria-hidden', 'false');
-    });
-  });
-
-  // --- close modal ---
-  function closeModal() {
-    modal.classList.remove('show');
-    modal.setAttribute('aria-hidden', 'true');
-    delete modal.dataset.currentProduct;
-  }
-  closeBtn.addEventListener('click', closeModal);
-  window.addEventListener('click', e => { if (e.target === modal) closeModal(); });
-
-  // --- add to cart ---
-  addToCartBtn.addEventListener('click', () => {
-    const currentProduct = modal.dataset.currentProduct;
-    if (!currentProduct) return alert('No product selected.');
-
-    const opt = sizeSelect.options[sizeSelect.selectedIndex];
-    const price = parsePriceFromOption(opt);
-    const sizeLabel = (opt.text || '').split('-')[0].trim();
-
-    const item = { name: currentProduct, size: sizeLabel, price: Number(price) || 0, quantity: 1 };
-
-    if (window.ZLCart && typeof window.ZLCart.add === 'function') {
-      window.ZLCart.add(item);
-    } else {
-      const raw = JSON.parse(localStorage.getItem('cart') || '[]');
-      raw.push(item);
-      localStorage.setItem('cart', JSON.stringify(raw));
-      const count = raw.reduce((s, it) => s + (Number(it.quantity) || 0), 0);
-      document.querySelectorAll('#cart-count, #cartCount, .cart-count, .cart-badge')
-        .forEach(el => el.textContent = count);
-      document.dispatchEvent(new CustomEvent('cart:updated'));
-    }
-
-    alert(`${currentProduct} — ${sizeLabel} added to cart ($${price})`);
-    if (window.ZLCart?.renderBadge) window.ZLCart.renderBadge();
-
-    closeModal();
-  });
-
-  // --- add then go to cart ---
-  goToCartBtn.addEventListener('click', () => {
-    addToCartBtn.click();
-    setTimeout(() => { window.location.href = 'cart.html'; }, 200);
-  });
-});
-</script>
+</div>
 
 
 
@@ -412,6 +325,7 @@ function googleTranslateElementInit() {
 
 </body>
 </html>
+
 
 
 
