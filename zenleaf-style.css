@@ -295,36 +295,14 @@ body.homepage .products-grid .product-card img {
 }
 
 
+
+
+
 /* ======================
-   🌿 THC Flower Page — CLEAN SINGLE SOURCE OF TRUTH
+   🌿 ZENLEAF GLOBAL PRODUCT SYSTEM
    ====================== */
 
-/* Page scope */
-body.thcflower {
-  margin: 0;
-  padding: 0;
-  font-family: 'Rajdhani', sans-serif;
-  background: url('zenbcg.png') no-repeat center center fixed;
-  background-size: cover;
-  color: #fff;
-}
-
-/* Title */
-body.thcflower .page-title {
-  text-align: center;
-  margin: 2rem auto 1rem;
-  padding: 0.5rem 1rem;
-  font-size: 2rem;
-  font-weight: bold;
-  color: #fff;
-  background: rgba(0,0,0,0.55);
-  border-radius: 8px;
-  text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
-  width: fit-content;
-}
-
-/* Grid (2 / 3 / 4 columns) */
-body.thcflower .products-grid {
+.products-page .products-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
@@ -332,12 +310,137 @@ body.thcflower .products-grid {
   max-width: 1200px;
   margin: 0 auto;
 }
+
 @media (min-width: 768px) {
-  body.thcflower .products-grid { grid-template-columns: repeat(3, 1fr); }
+  .products-page .products-grid { grid-template-columns: repeat(3, 1fr); }
 }
+
 @media (min-width: 1200px) {
-  body.thcflower .products-grid { grid-template-columns: repeat(4, 1fr); }
+  .products-page .products-grid { grid-template-columns: repeat(4, 1fr); }
 }
+
+.products-page .product-card {
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  padding-bottom: 15px;
+}
+
+.products-page .product-card:hover {
+  transform: translateY(-6px);
+  border-color: #1abc9c;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.products-page .product-card img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+}
+
+.products-page .product-content {
+  padding: 15px;
+  text-align: left;
+}
+
+.products-page .strain-type {
+  display: inline-block;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 20px;
+  margin-bottom: 8px;
+}
+
+.products-page .strain-type.indica {
+  background: #2e7d32;
+  color: #fff;
+}
+
+.products-page .strain-type.sativa {
+  background: #f9a825;
+  color: #000;
+}
+
+.products-page .strain-type.hybrid {
+  background: #6a1b9a;
+  color: #fff;
+}
+
+.products-page .thc-level {
+  color: #6bd66b;
+  font-weight: 700;
+  font-size: 14px;
+  margin-left: 6px;
+}
+
+.products-page .size-options label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.products-page .size-options input[type="radio"] {
+  margin-right: 6px;
+  accent-color: #1abc9c;
+}
+
+.products-page .size-options input[type="radio"]:checked + span {
+  color: #1abc9c;
+  font-weight: 700;
+}
+
+.products-page .add-to-cart {
+  width: 100%;
+  background: #1abc9c;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.3s ease;
+}
+
+.products-page .add-to-cart:hover {
+  background: #16a085;
+}
+
+/* Price list */
+.price-list {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+}
+
+.price-list li {
+  margin: 5px 0;
+}
+
+/* Order button */
+.order-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 14px;
+  background: #1db954;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 6px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.order-btn:hover {
+  background: #17a44a;
+}
+
+
+
 
 /* --- Premium Glassy Cards --- */
 body.thcflower .product-card {
@@ -1299,6 +1402,7 @@ footer a:hover {
   font-weight: 600;
   margin-left: 6px;
 }
+
 
 
 
