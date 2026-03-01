@@ -440,6 +440,26 @@ body.modal-open {
 }
 
 
+
+
+.product-card .order-btn {
+  display: inline-block;
+  background: #28a745;
+  color: #fff;
+  padding: 12px;
+  text-align: center;
+  border-radius: 10px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.product-card .order-btn:hover {
+  background: #218838;
+}
+
+
+
 /* --- CART PAGE STYLING --- */
 .cart-container {
       max-width: 900px;
@@ -1279,6 +1299,7 @@ footer a:hover {
   font-weight: 600;
   margin-left: 6px;
 }
+
 
 
 
