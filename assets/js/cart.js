@@ -236,4 +236,47 @@
     });
   });
 
+   // ===============================
+// UNIVERSAL PRODUCT PAGE HANDLER
+// ===============================
+
+document.addEventListener("click", function(e) {
+
+  const btn = e.target.closest(".add-to-cart-btn");
+  if (!btn) return;
+
+  const card = btn.closest(".product-card");
+  if (!card) return;
+
+  const selected = card.querySelector("input[type='radio']:checked");
+
+  if (!selected) {
+    alert("Please select an option.");
+    return;
+  }
+
+  // expected format: "Product Name - Size|Price"
+  const [left, priceRaw] = selected.value.split("|");
+  const price = parseFloat(priceRaw) || 0;
+
+  let name = left;
+  let size = "";
+
+  if (left.includes(" - ")) {
+    const parts = left.split(" - ");
+    name = parts[0].trim();
+    size = parts[1].trim();
+  }
+
+  ZLCart.add({
+    name: name,
+    size: size,
+    price: price,
+    quantity: 1
+  });
+
+  alert("Added to cart!");
+});
+
 })();
+
