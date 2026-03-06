@@ -236,6 +236,36 @@
     });
   });
 
+// ===============================
+  // 🚀 BULK FORCE FILTER (HIDE 1/2 OZ)
+  // ===============================
+  function applyBulkFilter() {
+    // 1. Hide Radio Button Options (Labels)
+    const labels = document.querySelectorAll('label');
+    labels.forEach(label => {
+      const text = label.innerText.toLowerCase();
+      if (text.includes('1/2') || text.includes('half')) {
+        label.style.display = 'none'; // Hide the 1/2 oz choice
+      }
+    });
+
+    // 2. Hide Dropdown Options (Select Menus)
+    const options = document.querySelectorAll('option');
+    options.forEach(opt => {
+      const val = opt.innerText.toLowerCase();
+      if (val.includes('1/2') || val.includes('half')) {
+        opt.remove(); // Completely remove from dropdown
+      }
+    });
+  }
+
+  // Run the filter as soon as the page is ready
+  document.addEventListener('DOMContentLoaded', applyBulkFilter);
+  // Run again in case of slow-loading content
+  setTimeout(applyBulkFilter, 500); 
+
+  
+   
    // ===============================
 // UNIVERSAL PRODUCT PAGE HANDLER
 // ===============================
@@ -279,4 +309,5 @@ document.addEventListener("click", function(e) {
 });
 
 })();
+
 
